@@ -1,0 +1,1538 @@
+{
+  "artistList": [
+    {
+      "id": "ART-001",
+      "nameArtist": "Amelia Wilson",
+      "avatar": "https://randomuser.me/api/portraits/women/45.jpg",
+      "role": "Junior Makeup Artist",
+      "specialty": "Bridal Makeup",
+      "status": 2,
+      "gender": 0,
+      "phone": "0976224720",
+      "email": "amelia.wilson@beautypro.com",
+      "dob": "1992-04-20",
+      "bankAccount": {
+        "bank": "Vietcombank",
+        "stk": "6154335205",
+        "name": "Amelia Wilson"
+      },
+      "address": "Hanoi",
+      "areaBook": "Hanoi",
+      "note": "Highly rated for precision and professionalism.",
+      "aboutArtist": "Experienced makeup artist with a passion for beauty and transformation.",
+      "timeJoin": "2025-05-21",
+      "services": [
+        {
+          "id": "SVC-002",
+          "name": "Party Makeup",
+          "price": 100,
+          "description": "Evening event makeup",
+          "status": 1
+        }
+      ],
+      "certificateImg": [
+        "https://coolmakeupartist.weebly.com/uploads/1/4/0/7/14075888/6086653.jpg?408",
+        "https://www.qcmakeupacademy.com/wp-content/uploads/2017/12/certificate-2018-2.jpg",
+        "https://www.iapcollege.com/wp-content/uploads/sample-certificate-makeup-artist-certification-course-online.jpg"
+      ],
+      "reviewCount": 35,
+      "rating": 4.33,
+      "experience": "2 years",
+      "schedule": [
+        {
+          "id": "SCH-001-1",
+          "customer": {
+            "id": "CUS-001-1",
+            "name": "Olivia Wilson",
+            "avatar": "https://randomuser.me/api/portraits/women/78.jpg",
+            "phone": "0955247080",
+            "note": "Returning client",
+            "address": "Hai Phong"
+          },
+          "service": "Bridal Makeup",
+          "date": "2025-05-26",
+          "time": "05:30 PM",
+          "duration": "133 minutes",
+          "status": 0
+        },
+        {
+          "id": "SCH-001-2",
+          "customer": {
+            "id": "CUS-001-2",
+            "name": "Evelyn Lopez",
+            "avatar": "https://randomuser.me/api/portraits/women/25.jpg",
+            "phone": "0990735722",
+            "note": "Returning client",
+            "address": "Da Nang"
+          },
+          "service": "Party Makeup",
+          "date": "2025-05-27",
+          "time": "11:45 AM",
+          "duration": "134 minutes",
+          "status": 2
+        },
+        {
+          "id": "SCH-001-3",
+          "customer": {
+            "id": "CUS-001-3",
+            "name": "Isabella Jones",
+            "avatar": "https://randomuser.me/api/portraits/women/10.jpg",
+            "phone": "0927404477",
+            "note": "First-time customer",
+            "address": "Hanoi"
+          },
+          "service": "Photoshoot Makeup",
+          "date": "2025-06-10",
+          "time": "09:15 PM",
+          "duration": "126 minutes",
+          "status": 2
+        },
+        {
+          "id": "SCH-001-4",
+          "customer": {
+            "id": "CUS-001-4",
+            "name": "Amelia Smith",
+            "avatar": "https://randomuser.me/api/portraits/women/69.jpg",
+            "phone": "0942058400",
+            "note": "First-time customer",
+            "address": "Da Nang"
+          },
+          "service": "Photoshoot Makeup",
+          "date": "2025-06-12",
+          "time": "08:00 AM",
+          "duration": "109 minutes",
+          "status": 2
+        },
+        {
+          "id": "SCH-001-5",
+          "customer": {
+            "id": "CUS-001-5",
+            "name": "Harper Brown",
+            "avatar": "https://randomuser.me/api/portraits/women/89.jpg",
+            "phone": "0999581331",
+            "note": "Returning client",
+            "address": "Ho Chi Minh City"
+          },
+          "service": "Party Makeup",
+          "date": "2025-06-14",
+          "time": "02:00 PM",
+          "duration": "129 minutes",
+          "status": 1
+        },
+        {
+          "id": "SCH-001-6",
+          "customer": {
+            "id": "CUS-001-1",
+            "name": "Olivia Wilson",
+            "avatar": "https://randomuser.me/api/portraits/women/78.jpg",
+            "phone": "0955247080",
+            "note": "Returning client",
+            "address": "Hai Phong"
+          },
+          "service": "Bridal Makeup",
+          "date": "2025-06-02",
+          "time": "08:30 AM",
+          "duration": "45 minutes",
+          "status": 1
+        },
+        {
+          "id": "SCH-001-7",
+          "customer": {
+            "id": "CUS-001-1",
+            "name": "Olivia Wilson",
+            "avatar": "https://randomuser.me/api/portraits/women/78.jpg",
+            "phone": "0955247080",
+            "note": "Returning client",
+            "address": "Hai Phong"
+          },
+          "service": "Bridal Makeup",
+          "date": "2025-06-03",
+          "time": "05:30 PM",
+          "duration": "30 minutes",
+          "status": 0
+        },
+        {
+          "id": "SCH-001-8",
+          "customer": {
+            "id": "CUS-001-1",
+            "name": "Olivia Wilson",
+            "avatar": "https://randomuser.me/api/portraits/women/78.jpg",
+            "phone": "0955247080",
+            "note": "Returning client",
+            "address": "Hai Phong"
+          },
+          "service": "Bridal Makeup",
+          "date": "2025-06-04",
+          "time": "10:0 AM",
+          "duration": "60 minutes",
+          "status": 1
+        }
+      ],
+      "totalIncome": 9819,
+      "totalBooked": 137,
+      "totalCancel": 0,
+      "totalCustomer": 46,
+      "productUsed": [
+        "Maybelline Mascara",
+        "Urban Decay Eyeshadow",
+        "NARS Concealer"
+      ]
+    },
+    {
+      "id": "ART-002",
+      "nameArtist": "Emma Lopez",
+      "avatar": "https://randomuser.me/api/portraits/women/13.jpg",
+      "role": "Junior Makeup Artist",
+      "specialty": "Bridal Makeup",
+      "status": 1,
+      "gender": 0,
+      "phone": "0920216118",
+      "email": "emma.lopez@beautypro.com",
+      "dob": "1998-06-22",
+      "bankAccount": {
+        "bank": "Vietcombank",
+        "stk": "2062860544",
+        "name": "Emma Lopez"
+      },
+      "address": "Can Tho",
+      "areaBook": "Hanoi",
+      "note": "Highly rated for precision and professionalism.",
+      "aboutArtist": "Experienced makeup artist with a passion for beauty and transformation.",
+      "timeJoin": "2025-05-25",
+      "services": [
+        {
+          "id": "SVC-003",
+          "name": "Photoshoot Makeup",
+          "price": 130,
+          "description": "Makeup for photoshoots",
+          "status": 1
+        },
+        {
+          "id": "SVC-002",
+          "name": "Party Makeup",
+          "price": 100,
+          "description": "Evening event makeup",
+          "status": 0
+        },
+        {
+          "id": "SVC-001",
+          "name": "Bridal Makeup",
+          "price": 150,
+          "description": "Full bridal makeup package",
+          "status": 1
+        }
+      ],
+      "certificateImg": [
+        "https://coolmakeupartist.weebly.com/uploads/1/4/0/7/14075888/6086653.jpg?408",
+        "https://www.qcmakeupacademy.com/wp-content/uploads/2017/12/certificate-2018-2.jpg",
+        "https://www.iapcollege.com/wp-content/uploads/sample-certificate-makeup-artist-certification-course-online.jpg"
+      ],
+      "reviewCount": 12,
+      "rating": 4.37,
+      "experience": "13 years",
+      "schedule": [
+        {
+          "id": "SCH-002-1",
+          "customer": {
+            "id": "CUS-002-1",
+            "name": "Emma Wilson",
+            "avatar": "https://randomuser.me/api/portraits/women/30.jpg",
+            "phone": "0974657602",
+            "note": "First-time customer",
+            "address": "Da Nang"
+          },
+          "service": "Party Makeup",
+          "date": "2025-05-31",
+          "time": "09:30 AM",
+          "duration": "108 minutes",
+          "status": 0
+        },
+        {
+          "id": "SCH-002-2",
+          "customer": {
+            "id": "CUS-002-2",
+            "name": "Evelyn Lopez",
+            "avatar": "https://randomuser.me/api/portraits/women/11.jpg",
+            "phone": "0971131382",
+            "note": "Returning client",
+            "address": "Da Nang"
+          },
+          "service": "Bridal Makeup",
+          "date": "2025-06-15",
+          "time": "10:00 AM",
+          "duration": "179 minutes",
+          "status": 1
+        },
+        {
+          "id": "SCH-002-3",
+          "customer": {
+            "id": "CUS-002-3",
+            "name": "Isabella Jones",
+            "avatar": "https://randomuser.me/api/portraits/women/87.jpg",
+            "phone": "0993958686",
+            "note": "Returning client",
+            "address": "Hai Phong"
+          },
+          "service": "Photoshoot Makeup",
+          "date": "2025-05-28",
+          "time": "11:45 AM",
+          "duration": "102 minutes",
+          "status": 1
+        },
+        {
+          "id": "SCH-002-4",
+          "customer": {
+            "id": "CUS-002-4",
+            "name": "Evelyn Jones",
+            "avatar": "https://randomuser.me/api/portraits/women/86.jpg",
+            "phone": "0932636365",
+            "note": "First-time customer",
+            "address": "Can Tho"
+          },
+          "service": "Photoshoot Makeup",
+          "date": "2025-06-10",
+          "time": "04:00 PM",
+          "duration": "102 minutes",
+          "status": 1
+        },
+        {
+          "id": "SCH-002-5",
+          "customer": {
+            "id": "CUS-002-5",
+            "name": "Evelyn Martinez",
+            "avatar": "https://randomuser.me/api/portraits/women/30.jpg",
+            "phone": "0972473069",
+            "note": "First-time customer",
+            "address": "Hai Phong"
+          },
+          "service": "Party Makeup",
+          "date": "2025-06-10",
+          "time": "04:30 PM",
+          "duration": "120 minutes",
+          "status": 1
+        }
+      ],
+      "totalIncome": 2385,
+      "totalBooked": 131,
+      "totalCancel": 9,
+      "totalCustomer": 72,
+      "productUsed": [
+        "Maybelline Mascara",
+        "NARS Concealer",
+        "MAC Foundation",
+        "Urban Decay Eyeshadow"
+      ]
+    },
+    {
+      "id": "ART-003",
+      "nameArtist": "Amelia Davis",
+      "avatar": "https://randomuser.me/api/portraits/women/78.jpg",
+      "role": "Senior Makeup Artist",
+      "specialty": "SFX Makeup",
+      "status": 2,
+      "gender": 1,
+      "phone": "0958847432",
+      "email": "amelia.davis@beautypro.com",
+      "dob": "1988-02-13",
+      "bankAccount": {
+        "bank": "VPBank",
+        "stk": "4627374138",
+        "name": "Amelia Davis"
+      },
+      "address": "Can Tho",
+      "areaBook": "Hanoi",
+      "note": "Highly rated for precision and professionalism.",
+      "aboutArtist": "Experienced makeup artist with a passion for beauty and transformation.",
+      "timeJoin": "2025-05-17",
+      "services": [
+        {
+          "id": "SVC-001",
+          "name": "Bridal Makeup",
+          "price": 150,
+          "description": "Full bridal makeup package",
+          "status": 0
+        },
+        {
+          "id": "SVC-003",
+          "name": "Photoshoot Makeup",
+          "price": 130,
+          "description": "Makeup for photoshoots",
+          "status": 1
+        },
+        {
+          "id": "SVC-002",
+          "name": "Party Makeup",
+          "price": 100,
+          "description": "Evening event makeup",
+          "status": 1
+        }
+      ],
+      "certificateImg": [
+        "https://coolmakeupartist.weebly.com/uploads/1/4/0/7/14075888/6086653.jpg?408",
+        "https://www.qcmakeupacademy.com/wp-content/uploads/2017/12/certificate-2018-2.jpg",
+        "https://www.iapcollege.com/wp-content/uploads/sample-certificate-makeup-artist-certification-course-online.jpg"
+      ],
+      "reviewCount": 103,
+      "rating": 4.33,
+      "experience": "10 years",
+      "schedule": [
+        {
+          "id": "SCH-003-1",
+          "customer": {
+            "id": "CUS-003-1",
+            "name": "Mia Williams",
+            "avatar": "https://randomuser.me/api/portraits/women/15.jpg",
+            "phone": "0975187602",
+            "note": "First-time customer",
+            "address": "Can Tho"
+          },
+          "service": "Bridal Makeup",
+          "date": "2025-06-06",
+          "time": "01:00 PM",
+          "duration": "133 minutes",
+          "status": 2
+        },
+        {
+          "id": "SCH-003-2",
+          "customer": {
+            "id": "CUS-003-2",
+            "name": "Evelyn Martinez",
+            "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+            "phone": "0943654237",
+            "note": "Returning client",
+            "address": "Hai Phong"
+          },
+          "service": "Bridal Makeup",
+          "date": "2025-05-27",
+          "time": "09:30 PM",
+          "duration": "116 minutes",
+          "status": 2
+        },
+        {
+          "id": "SCH-003-3",
+          "customer": {
+            "id": "CUS-003-3",
+            "name": "Ava Smith",
+            "avatar": "https://randomuser.me/api/portraits/women/23.jpg",
+            "phone": "0973895623",
+            "note": "Returning client",
+            "address": "Ho Chi Minh City"
+          },
+          "service": "Photoshoot Makeup",
+          "date": "2025-06-03",
+          "time": "11:30 AM",
+          "duration": "126 minutes",
+          "status": 1
+        },
+        {
+          "id": "SCH-003-4",
+          "customer": {
+            "id": "CUS-003-4",
+            "name": "Olivia Davis",
+            "avatar": "https://randomuser.me/api/portraits/women/24.jpg",
+            "phone": "0999828654",
+            "note": "Returning client",
+            "address": "Can Tho"
+          },
+          "service": "Photoshoot Makeup",
+          "date": "2025-06-03",
+          "time": "05:15 PM",
+          "duration": "96 minutes",
+          "status": 0
+        },
+        {
+          "id": "SCH-003-5",
+          "customer": {
+            "id": "CUS-003-5",
+            "name": "Abigail Garcia",
+            "avatar": "https://randomuser.me/api/portraits/women/30.jpg",
+            "phone": "0986148689",
+            "note": "First-time customer",
+            "address": "Hai Phong"
+          },
+          "service": "Photoshoot Makeup",
+          "date": "2025-06-07",
+          "time": "10:00 AM",
+          "duration": "127 minutes",
+          "status": 0
+        }
+      ],
+      "totalIncome": 12002,
+      "totalBooked": 167,
+      "totalCancel": 5,
+      "totalCustomer": 74,
+      "productUsed": [
+        "Fenty Highlighter",
+        "NARS Concealer",
+        "Urban Decay Eyeshadow"
+      ]
+    },
+    {
+      "id": "ART-004",
+      "nameArtist": "Harper Jones",
+      "avatar": "https://randomuser.me/api/portraits/women/14.jpg",
+      "role": "Senior Makeup Artist",
+      "specialty": "Everyday Glam",
+      "status": 1,
+      "gender": 0,
+      "phone": "0952571441",
+      "email": "harper.jones@beautypro.com",
+      "dob": "1991-11-14",
+      "bankAccount": {
+        "bank": "ACB",
+        "stk": "3881744412",
+        "name": "Harper Jones"
+      },
+      "address": "Can Tho",
+      "areaBook": "Can Tho",
+      "note": "Highly rated for precision and professionalism.",
+      "aboutArtist": "Experienced makeup artist with a passion for beauty and transformation.",
+      "timeJoin": "2025-05-08",
+      "services": [
+        {
+          "id": "SVC-001",
+          "name": "Bridal Makeup",
+          "price": 150,
+          "description": "Full bridal makeup package",
+          "status": 1
+        },
+        {
+          "id": "SVC-002",
+          "name": "Party Makeup",
+          "price": 100,
+          "description": "Evening event makeup",
+          "status": 1
+        },
+        {
+          "id": "SVC-003",
+          "name": "Photoshoot Makeup",
+          "price": 130,
+          "description": "Makeup for photoshoots",
+          "status": 0
+        }
+      ],
+      "certificateImg": [
+        "https://coolmakeupartist.weebly.com/uploads/1/4/0/7/14075888/6086653.jpg?408",
+        "https://www.qcmakeupacademy.com/wp-content/uploads/2017/12/certificate-2018-2.jpg",
+        "https://www.iapcollege.com/wp-content/uploads/sample-certificate-makeup-artist-certification-course-online.jpg"
+      ],
+      "reviewCount": 50,
+      "rating": 4.48,
+      "experience": "13 years",
+      "schedule": [
+        {
+          "id": "SCH-004-1",
+          "customer": {
+            "id": "CUS-004-1",
+            "name": "Abigail Davis",
+            "avatar": "https://randomuser.me/api/portraits/women/60.jpg",
+            "phone": "0976933068",
+            "note": "First-time customer",
+            "address": "Da Nang"
+          },
+          "service": "Party Makeup",
+          "date": "2025-06-13",
+          "time": "07:30 PM",
+          "duration": "141 minutes",
+          "status": 1
+        },
+        {
+          "id": "SCH-004-2",
+          "customer": {
+            "id": "CUS-004-2",
+            "name": "Amelia Davis",
+            "avatar": "https://randomuser.me/api/portraits/women/15.jpg",
+            "phone": "0986905011",
+            "note": "Returning client",
+            "address": "Da Nang"
+          },
+          "service": "Party Makeup",
+          "date": "2025-06-15",
+          "time": "05:00 PM",
+          "duration": "159 minutes",
+          "status": 2
+        },
+        {
+          "id": "SCH-004-3",
+          "customer": {
+            "id": "CUS-004-3",
+            "name": "Mia Brown",
+            "avatar": "https://randomuser.me/api/portraits/women/34.jpg",
+            "phone": "0966401485",
+            "note": "Returning client",
+            "address": "Can Tho"
+          },
+          "service": "Photoshoot Makeup",
+          "date": "2025-06-02",
+          "time": "12:15 PM",
+          "duration": "156 minutes",
+          "status": 1
+        },
+        {
+          "id": "SCH-004-4",
+          "customer": {
+            "id": "CUS-004-4",
+            "name": "Isabella Davis",
+            "avatar": "https://randomuser.me/api/portraits/women/62.jpg",
+            "phone": "0957722270",
+            "note": "First-time customer",
+            "address": "Da Nang"
+          },
+          "service": "Photoshoot Makeup",
+          "date": "2025-06-06",
+          "time": "03:30 PM",
+          "duration": "111 minutes",
+          "status": 0
+        },
+        {
+          "id": "SCH-004-5",
+          "customer": {
+            "id": "CUS-004-5",
+            "name": "Mia Lopez",
+            "avatar": "https://randomuser.me/api/portraits/women/74.jpg",
+            "phone": "0935397758",
+            "note": "Returning client",
+            "address": "Ho Chi Minh City"
+          },
+          "service": "Party Makeup",
+          "date": "2025-06-11",
+          "time": "03:00 PM",
+          "duration": "180 minutes",
+          "status": 0
+        }
+      ],
+      "totalIncome": 4295,
+      "totalBooked": 185,
+      "totalCancel": 0,
+      "totalCustomer": 61,
+      "productUsed": [
+        "NARS Concealer",
+        "Fenty Highlighter",
+        "MAC Foundation"
+      ]
+    },
+    {
+      "id": "ART-005",
+      "nameArtist": "Emma Wilson",
+      "avatar": "https://randomuser.me/api/portraits/women/37.jpg",
+      "role": "Senior Makeup Artist",
+      "specialty": "Everyday Glam",
+      "status": 1,
+      "gender": 0,
+      "phone": "0969034033",
+      "email": "emma.wilson@beautypro.com",
+      "dob": "1987-04-08",
+      "bankAccount": {
+        "bank": "ACB",
+        "stk": "3191749230",
+        "name": "Emma Wilson"
+      },
+      "address": "Ho Chi Minh City",
+      "areaBook": "Hai Phong",
+      "note": "Highly rated for precision and professionalism.",
+      "aboutArtist": "Experienced makeup artist with a passion for beauty and transformation.",
+      "timeJoin": "2025-05-02",
+      "services": [
+        {
+          "id": "SVC-001",
+          "name": "Bridal Makeup",
+          "price": 150,
+          "description": "Full bridal makeup package",
+          "status": 1
+        }
+      ],
+      "certificateImg": [
+        "https://coolmakeupartist.weebly.com/uploads/1/4/0/7/14075888/6086653.jpg?408",
+        "https://www.qcmakeupacademy.com/wp-content/uploads/2017/12/certificate-2018-2.jpg",
+        "https://www.iapcollege.com/wp-content/uploads/sample-certificate-makeup-artist-certification-course-online.jpg"
+      ],
+      "reviewCount": 178,
+      "rating": 4.42,
+      "experience": "10 years",
+      "schedule": [
+        {
+          "id": "SCH-005-1",
+          "customer": {
+            "id": "CUS-005-1",
+            "name": "Sophia Jones",
+            "avatar": "https://randomuser.me/api/portraits/women/48.jpg",
+            "phone": "0991531035",
+            "note": "First-time customer",
+            "address": "Hai Phong"
+          },
+          "service": "Party Makeup",
+          "date": "2025-05-29",
+          "time": "01:45 PM",
+          "duration": "104 minutes",
+          "status": 0
+        },
+        {
+          "id": "SCH-005-2",
+          "customer": {
+            "id": "CUS-005-2",
+            "name": "Olivia Lopez",
+            "avatar": "https://randomuser.me/api/portraits/women/39.jpg",
+            "phone": "0996676866",
+            "note": "Returning client",
+            "address": "Hai Phong"
+          },
+          "service": "Bridal Makeup",
+          "date": "2025-05-26",
+          "time": "08:30 PM",
+          "duration": "114 minutes",
+          "status": 2
+        },
+        {
+          "id": "SCH-005-3",
+          "customer": {
+            "id": "CUS-005-3",
+            "name": "Emma Williams",
+            "avatar": "https://randomuser.me/api/portraits/women/33.jpg",
+            "phone": "0998907193",
+            "note": "Returning client",
+            "address": "Hai Phong"
+          },
+          "service": "Party Makeup",
+          "date": "2025-05-30",
+          "time": "07:00 PM",
+          "duration": "103 minutes",
+          "status": 2
+        },
+        {
+          "id": "SCH-005-4",
+          "customer": {
+            "id": "CUS-005-4",
+            "name": "Isabella Williams",
+            "avatar": "https://randomuser.me/api/portraits/women/48.jpg",
+            "phone": "0953344923",
+            "note": "First-time customer",
+            "address": "Hanoi"
+          },
+          "service": "Bridal Makeup",
+          "date": "2025-06-08",
+          "time": "01:00 PM",
+          "duration": "159 minutes",
+          "status": 2
+        },
+        {
+          "id": "SCH-005-5",
+          "customer": {
+            "id": "CUS-005-5",
+            "name": "Sophia Davis",
+            "avatar": "https://randomuser.me/api/portraits/women/42.jpg",
+            "phone": "0985256067",
+            "note": "Returning client",
+            "address": "Ho Chi Minh City"
+          },
+          "service": "Photoshoot Makeup",
+          "date": "2025-06-03",
+          "time": "06:45 PM",
+          "duration": "166 minutes",
+          "status": 0
+        }
+      ],
+      "totalIncome": 11439,
+      "totalBooked": 121,
+      "totalCancel": 3,
+      "totalCustomer": 86,
+      "productUsed": [
+        "Urban Decay Eyeshadow",
+        "Fenty Highlighter",
+        "MAC Foundation",
+        "Chanel Lipstick"
+      ]
+    }
+  ],
+  "totalAppointment": [
+    {
+      "id": "APP-001",
+      "nameCus": "Joseph Morrison",
+      "avatarCus": "https://randomuser.me/api/portraits/women/66.jpg",
+      "date": "2025-05-05",
+      "time": "14:00",
+      "nameAr": "Jessica Morrow",
+      "service": "Massage",
+      "status": 1,
+      "transaction": [
+        {
+          "amound": 659010,
+          "type": 2,
+          "status": 1,
+          "paymentMethod": "ZaloPay",
+          "createAt": {
+            "date": "2025-06-03",
+            "time": "10:00"
+          }
+        },
+        {
+          "amound": 770129,
+          "type": 1,
+          "status": 1,
+          "paymentMethod": "Credit Card",
+          "createAt": {
+            "date": "2025-05-03",
+            "time": "12:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-002",
+      "nameCus": "Courtney Butler",
+      "avatarCus": "https://randomuser.me/api/portraits/women/51.jpg",
+      "date": "2025-06-01",
+      "time": "17:00",
+      "nameAr": "Cody Campbell",
+      "service": "Haircut",
+      "status": 1,
+      "transaction": [
+        {
+          "amound": 546719,
+          "type": 1,
+          "status": 3,
+          "paymentMethod": "ZaloPay",
+          "createAt": {
+            "date": "2025-05-03",
+            "time": "19:30"
+          }
+        },
+        {
+          "amound": 831329,
+          "type": 2,
+          "status": 3,
+          "paymentMethod": "Credit Card",
+          "createAt": {
+            "date": "2025-06-06",
+            "time": "14:30"
+          }
+        },
+        {
+          "amound": 131782,
+          "type": 0,
+          "status": 2,
+          "paymentMethod": "Bank Transfer",
+          "createAt": {
+            "date": "2025-05-09",
+            "time": "14:00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-003",
+      "nameCus": "Brian Diaz",
+      "avatarCus": "https://randomuser.me/api/portraits/women/32.jpg",
+      "date": "2025-05-16",
+      "time": "19:30",
+      "nameAr": "Kevin Jones",
+      "service": "Massage",
+      "status": 3,
+      "transaction": [
+        {
+          "amound": 782782,
+          "type": 0,
+          "status": 3,
+          "paymentMethod": "Credit Card",
+          "createAt": {
+            "date": "2025-05-17",
+            "time": "10:00"
+          }
+        },
+        {
+          "amound": 914230,
+          "type": 1,
+          "status": 1,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-14",
+            "time": "12:00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-004",
+      "nameCus": "Matthew Henderson",
+      "avatarCus": "https://randomuser.me/api/portraits/women/87.jpg",
+      "date": "2025-05-03",
+      "time": "15:30",
+      "nameAr": "Heidi Gentry",
+      "service": "Makeup",
+      "status": 0,
+      "transaction": [
+        {
+          "amound": 966725,
+          "type": 1,
+          "status": 2,
+          "paymentMethod": "Bank Transfer",
+          "createAt": {
+            "date": "2025-05-04",
+            "time": "17:30"
+          }
+        },
+        {
+          "amound": 158772,
+          "type": 0,
+          "status": 2,
+          "paymentMethod": "Credit Card",
+          "createAt": {
+            "date": "2025-05-11",
+            "time": "09:30"
+          }
+        },
+        {
+          "amound": 696924,
+          "type": 0,
+          "status": 2,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-11",
+            "time": "19:00"
+          }
+        },
+        {
+          "amound": 237537,
+          "type": 1,
+          "status": 2,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-05-02",
+            "time": "16:00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-005",
+      "nameCus": "Michael Smith",
+      "avatarCus": "https://randomuser.me/api/portraits/women/34.jpg",
+      "date": "2025-06-10",
+      "time": "16:30",
+      "nameAr": "Rachael Powell",
+      "service": "Makeup",
+      "status": 1,
+      "transaction": [
+        {
+          "amound": 344083,
+          "type": 1,
+          "status": 1,
+          "paymentMethod": "ZaloPay",
+          "createAt": {
+            "date": "2025-06-27",
+            "time": "11:30"
+          }
+        },
+        {
+          "amound": 448350,
+          "type": 0,
+          "status": 2,
+          "paymentMethod": "Credit Card",
+          "createAt": {
+            "date": "2025-05-16",
+            "time": "19:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-006",
+      "nameCus": "Sheila Griffin",
+      "avatarCus": "https://randomuser.me/api/portraits/women/4.jpg",
+      "date": "2025-06-29",
+      "time": "17:00",
+      "nameAr": "Gregory Smith",
+      "service": "Haircut",
+      "status": 1,
+      "transaction": [
+        {
+          "amound": 362255,
+          "type": 1,
+          "status": 1,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-18",
+            "time": "10:00"
+          }
+        },
+        {
+          "amound": 302482,
+          "type": 2,
+          "status": 2,
+          "paymentMethod": "Bank Transfer",
+          "createAt": {
+            "date": "2025-06-25",
+            "time": "18:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-007",
+      "nameCus": "James Wilson",
+      "avatarCus": "https://randomuser.me/api/portraits/women/67.jpg",
+      "date": "2025-05-29",
+      "time": "14:00",
+      "nameAr": "Jill Garcia",
+      "service": "Massage",
+      "status": 1,
+      "transaction": [
+        {
+          "amound": 209279,
+          "type": 1,
+          "status": 1,
+          "paymentMethod": "ZaloPay",
+          "createAt": {
+            "date": "2025-06-19",
+            "time": "09:00"
+          }
+        },
+        {
+          "amound": 298913,
+          "type": 0,
+          "status": 0,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-14",
+            "time": "19:00"
+          }
+        },
+        {
+          "amound": 348595,
+          "type": 0,
+          "status": 0,
+          "paymentMethod": "Credit Card",
+          "createAt": {
+            "date": "2025-06-07",
+            "time": "16:00"
+          }
+        },
+        {
+          "amound": 906502,
+          "type": 1,
+          "status": 1,
+          "paymentMethod": "Momo",
+          "createAt": {
+            "date": "2025-05-28",
+            "time": "14:00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-008",
+      "nameCus": "Courtney Sandoval",
+      "avatarCus": "https://randomuser.me/api/portraits/women/48.jpg",
+      "date": "2025-05-28",
+      "time": "17:30",
+      "nameAr": "Monique Shields",
+      "service": "Nail Art",
+      "status": 0,
+      "transaction": [
+        {
+          "amound": 305142,
+          "type": 2,
+          "status": 0,
+          "paymentMethod": "ZaloPay",
+          "createAt": {
+            "date": "2025-06-19",
+            "time": "15:30"
+          }
+        },
+        {
+          "amound": 435494,
+          "type": 1,
+          "status": 2,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-05-09",
+            "time": "13:00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-009",
+      "nameCus": "Kristen Perez",
+      "avatarCus": "https://randomuser.me/api/portraits/women/84.jpg",
+      "date": "2025-06-04",
+      "time": "12:30",
+      "nameAr": "David Parks",
+      "service": "Nail Art",
+      "status": 3,
+      "transaction": [
+        {
+          "amound": 911914,
+          "type": 2,
+          "status": 0,
+          "paymentMethod": "Bank Transfer",
+          "createAt": {
+            "date": "2025-06-01",
+            "time": "17:30"
+          }
+        },
+        {
+          "amound": 898629,
+          "type": 0,
+          "status": 1,
+          "paymentMethod": "Credit Card",
+          "createAt": {
+            "date": "2025-05-20",
+            "time": "16:00"
+          }
+        },
+        {
+          "amound": 886562,
+          "type": 2,
+          "status": 2,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-05-23",
+            "time": "17:00"
+          }
+        },
+        {
+          "amound": 363736,
+          "type": 1,
+          "status": 0,
+          "paymentMethod": "Momo",
+          "createAt": {
+            "date": "2025-06-28",
+            "time": "12:00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-010",
+      "nameCus": "Sherry Nelson DDS",
+      "avatarCus": "https://randomuser.me/api/portraits/women/57.jpg",
+      "date": "2025-05-22",
+      "time": "12:30",
+      "nameAr": "Catherine Avery",
+      "service": "Makeup",
+      "status": 0,
+      "transaction": [
+        {
+          "amound": 399461,
+          "type": 1,
+          "status": 3,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-21",
+            "time": "15:00"
+          }
+        },
+        {
+          "amound": 225221,
+          "type": 0,
+          "status": 0,
+          "paymentMethod": "Credit Card",
+          "createAt": {
+            "date": "2025-05-15",
+            "time": "15:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-011",
+      "nameCus": "Kim Bradley",
+      "avatarCus": "https://randomuser.me/api/portraits/women/95.jpg",
+      "date": "2025-06-09",
+      "time": "18:00",
+      "nameAr": "Yolanda Garcia",
+      "service": "Makeup",
+      "status": 3,
+      "transaction": [
+        {
+          "amound": 897697,
+          "type": 1,
+          "status": 0,
+          "paymentMethod": "Bank Transfer",
+          "createAt": {
+            "date": "2025-05-03",
+            "time": "14:00"
+          }
+        },
+        {
+          "amound": 226607,
+          "type": 1,
+          "status": 1,
+          "paymentMethod": "Credit Card",
+          "createAt": {
+            "date": "2025-06-02",
+            "time": "19:30"
+          }
+        },
+        {
+          "amound": 537643,
+          "type": 2,
+          "status": 2,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-17",
+            "time": "12:00"
+          }
+        },
+        {
+          "amound": 386108,
+          "type": 2,
+          "status": 1,
+          "paymentMethod": "ZaloPay",
+          "createAt": {
+            "date": "2025-05-23",
+            "time": "19:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-012",
+      "nameCus": "Alexandra Flores",
+      "avatarCus": "https://randomuser.me/api/portraits/women/6.jpg",
+      "date": "2025-05-30",
+      "time": "15:00",
+      "nameAr": "William Johnson",
+      "service": "Massage",
+      "status": 3,
+      "transaction": [
+        {
+          "amound": 835672,
+          "type": 0,
+          "status": 2,
+          "paymentMethod": "Bank Transfer",
+          "createAt": {
+            "date": "2025-05-14",
+            "time": "13:30"
+          }
+        },
+        {
+          "amound": 976038,
+          "type": 1,
+          "status": 2,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-05-24",
+            "time": "14:30"
+          }
+        },
+        {
+          "amound": 590530,
+          "type": 0,
+          "status": 3,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-05-22",
+            "time": "18:30"
+          }
+        },
+        {
+          "amound": 183739,
+          "type": 2,
+          "status": 3,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-24",
+            "time": "13:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-013",
+      "nameCus": "Nicholas Schaefer",
+      "avatarCus": "https://randomuser.me/api/portraits/women/69.jpg",
+      "date": "2025-06-02",
+      "time": "17:00",
+      "nameAr": "Michael Hill",
+      "service": "Haircut",
+      "status": 1,
+      "transaction": [
+        {
+          "amound": 517242,
+          "type": 0,
+          "status": 1,
+          "paymentMethod": "Bank Transfer",
+          "createAt": {
+            "date": "2025-06-19",
+            "time": "14:30"
+          }
+        },
+        {
+          "amound": 355462,
+          "type": 2,
+          "status": 2,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-20",
+            "time": "18:00"
+          }
+        },
+        {
+          "amound": 160400,
+          "type": 1,
+          "status": 0,
+          "paymentMethod": "Bank Transfer",
+          "createAt": {
+            "date": "2025-06-09",
+            "time": "18:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-014",
+      "nameCus": "Michael Morris",
+      "avatarCus": "https://randomuser.me/api/portraits/women/75.jpg",
+      "date": "2025-06-21",
+      "time": "10:00",
+      "nameAr": "Ruth Bailey",
+      "service": "Haircut",
+      "status": 3,
+      "transaction": [
+        {
+          "amound": 787631,
+          "type": 2,
+          "status": 3,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-05-04",
+            "time": "19:00"
+          }
+        },
+        {
+          "amound": 462174,
+          "type": 0,
+          "status": 3,
+          "paymentMethod": "ZaloPay",
+          "createAt": {
+            "date": "2025-05-05",
+            "time": "19:00"
+          }
+        },
+        {
+          "amound": 844009,
+          "type": 2,
+          "status": 3,
+          "paymentMethod": "ZaloPay",
+          "createAt": {
+            "date": "2025-06-12",
+            "time": "17:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-015",
+      "nameCus": "Jesse Johnston",
+      "avatarCus": "https://randomuser.me/api/portraits/women/27.jpg",
+      "date": "2025-05-25",
+      "time": "17:00",
+      "nameAr": "Brian Melton",
+      "service": "Nail Art",
+      "status": 3,
+      "transaction": [
+        {
+          "amound": 743573,
+          "type": 1,
+          "status": 1,
+          "paymentMethod": "Momo",
+          "createAt": {
+            "date": "2025-06-25",
+            "time": "08:00"
+          }
+        },
+        {
+          "amound": 599522,
+          "type": 2,
+          "status": 0,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-05-23",
+            "time": "12:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-016",
+      "nameCus": "Elizabeth Blair",
+      "avatarCus": "https://randomuser.me/api/portraits/women/42.jpg",
+      "date": "2025-05-02",
+      "time": "19:00",
+      "nameAr": "Russell Leonard",
+      "service": "Massage",
+      "status": 4,
+      "transaction": [
+        {
+          "amound": 428077,
+          "type": 0,
+          "status": 1,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-05",
+            "time": "14:00"
+          }
+        },
+        {
+          "amound": 401842,
+          "type": 0,
+          "status": 3,
+          "paymentMethod": "Credit Card",
+          "createAt": {
+            "date": "2025-05-25",
+            "time": "13:30"
+          }
+        },
+        {
+          "amound": 642351,
+          "type": 1,
+          "status": 2,
+          "paymentMethod": "Momo",
+          "createAt": {
+            "date": "2025-05-30",
+            "time": "18:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-017",
+      "nameCus": "Michael Keller",
+      "avatarCus": "https://randomuser.me/api/portraits/women/83.jpg",
+      "date": "2025-06-13",
+      "time": "10:00",
+      "nameAr": "Nicole York",
+      "service": "Makeup",
+      "status": 3,
+      "transaction": [
+        {
+          "amound": 619776,
+          "type": 0,
+          "status": 1,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-24",
+            "time": "17:30"
+          }
+        },
+        {
+          "amound": 883420,
+          "type": 2,
+          "status": 2,
+          "paymentMethod": "Bank Transfer",
+          "createAt": {
+            "date": "2025-06-18",
+            "time": "16:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-018",
+      "nameCus": "Regina Burton",
+      "avatarCus": "https://randomuser.me/api/portraits/women/45.jpg",
+      "date": "2025-05-30",
+      "time": "17:30",
+      "nameAr": "Raymond Sanchez",
+      "service": "Haircut",
+      "status": 1,
+      "transaction": [
+        {
+          "amound": 760518,
+          "type": 1,
+          "status": 0,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-05-07",
+            "time": "13:30"
+          }
+        },
+        {
+          "amound": 707707,
+          "type": 1,
+          "status": 3,
+          "paymentMethod": "Momo",
+          "createAt": {
+            "date": "2025-05-10",
+            "time": "13:30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-019",
+      "nameCus": "Derek Bradley",
+      "avatarCus": "https://randomuser.me/api/portraits/women/27.jpg",
+      "date": "2025-06-08",
+      "time": "16:30",
+      "nameAr": "Jay Frank",
+      "service": "Haircut",
+      "status": 0,
+      "transaction": [
+        {
+          "amound": 159211,
+          "type": 1,
+          "status": 1,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-06-18",
+            "time": "19:00"
+          }
+        },
+        {
+          "amound": 210950,
+          "type": 0,
+          "status": 0,
+          "paymentMethod": "Bank Transfer",
+          "createAt": {
+            "date": "2025-05-11",
+            "time": "12:00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "APP-020",
+      "nameCus": "Keith Gould",
+      "avatarCus": "https://randomuser.me/api/portraits/women/11.jpg",
+      "date": "2025-06-14",
+      "time": "14:30",
+      "nameAr": "Matthew Grant",
+      "service": "Nail Art",
+      "status": 4,
+      "transaction": [
+        {
+          "amound": 532138,
+          "type": 1,
+          "status": 0,
+          "paymentMethod": "ZaloPay",
+          "createAt": {
+            "date": "2025-06-05",
+            "time": "17:00"
+          }
+        },
+        {
+          "amound": 247967,
+          "type": 1,
+          "status": 3,
+          "paymentMethod": "ZaloPay",
+          "createAt": {
+            "date": "2025-05-30",
+            "time": "15:30"
+          }
+        },
+        {
+          "amound": 390438,
+          "type": 2,
+          "status": 3,
+          "paymentMethod": "Cash",
+          "createAt": {
+            "date": "2025-05-06",
+            "time": "18:00"
+          }
+        }
+      ]
+    }
+  ]
+}

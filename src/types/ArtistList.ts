@@ -1,5 +1,5 @@
 export interface ArtistList {
-	idArtist: string;
+	id: string;
 	nameArtist: string;
 	avatar: string;
 	role: string;

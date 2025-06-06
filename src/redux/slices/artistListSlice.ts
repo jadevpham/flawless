@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export interface ArtistList {
-	idArtist: string;
+	id: string;
 	nameArtist: string;
 	avatar: string;
 	role: string;
@@ -71,8 +71,12 @@ const initialState: ArtistListState = {
 export const fetchArtistList = createAsyncThunk(
 	"artistList/fetchArtistList",
 	async () => {
-		const response = await axios.get("/api/artistList.json");
-		return response.data.artistList as ArtistList[];
+		// const response = await axios.get("/api/artistList.json");
+		const response = await axios.get("http://localhost:3001/artistList");
+		console.log("json-server data:", response.data); // xem dữ liệu trả về
+		// return response.data.artistList as ArtistList[];
+		return response.data as ArtistList[];
+
 	},
 );
 

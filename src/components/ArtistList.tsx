@@ -14,17 +14,17 @@ export default function ArtistList() {
 	// Kiểm tra toàn bộ state lưu trong Redux
 	// const fullState = useSelector((state: RootState) => state);
 	// console.log("Full redux state", fullState);
-	
+
 	useEffect(() => {
 		dispatch(fetchArtistList());
 	}, [dispatch]);
 
 	// test đã fetch dữ liệu thành công chưa
-	// useEffect(() => {
-	// 	if (dataArtistList) {
-	// 		console.log("Dữ liệu dataArtistList đã fetch:", dataArtistList);
-	// 	}
-	// }, [dataArtistList]);
+	useEffect(() => {
+		if (dataArtistList) {
+			console.log("Dữ liệu dataArtistList đã fetch 3001:", dataArtistList);
+		}
+	}, [dataArtistList]);
 
 	// Search
 	const artistSearch = useSelector(
@@ -32,21 +32,36 @@ export default function ArtistList() {
 	);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [itemsPerPage, setItemsPerPage] = useState(10);
-
 	// Lọc dữ liệu theo search (tên customer hoặc artist) và ngày tháng năm
-	const filteredArtists = Array.isArray(dataArtistList)
-	? dataArtistList.filter((c) =>
-		c.nameArtist.toLowerCase().includes(artistSearch.toLowerCase())
-	  )
-	: [];
-  
+	// const filteredArtists = Array.isArray(dataArtistList)
+	// ? dataArtistList.filter((c) =>
+	// 	c.nameArtist.toLowerCase().includes(artistSearch.toLowerCase())
+	//   )
+	// : [];
+	const artistStatusFilter = useSelector(
+		(state: RootState) => state.search.artistStatusFilter,
+	);
+	const filteredArtists = dataArtistList.filter((artist) => {
+		const matchesSearch = artist.nameArtist
+			.toLowerCase()
+			.includes(artistSearch.toLowerCase());
+
+		const matchesStatus =
+			artistStatusFilter === "" || artist.status === Number(artistStatusFilter);
+
+		return matchesSearch && matchesStatus;
+	});
+
 	useEffect(() => {
 		setCurrentPage(1);
 	}, [artistSearch]);
 	// Calculate pagination
 	const indexOfLastItem = currentPage * itemsPerPage;
 	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-	const currentItems = filteredArtists?.slice(indexOfFirstItem, indexOfLastItem);
+	const currentItems = filteredArtists?.slice(
+		indexOfFirstItem,
+		indexOfLastItem,
+	);
 	const totalItems = filteredArtists.length;
 
 	const handlePageChange = (page: number) => {
@@ -67,17 +82,25 @@ export default function ArtistList() {
 					</p>
 				) : (
 					currentItems.map((artist) => (
-						<ArtistItem 
-							key={artist.idArtist}
+						<ArtistItem
+							key={artist.id}
 							name={artist.nameArtist}
-							code={artist.idArtist}
+							code={artist.id}
 							specialty={artist.specialty}
 							phone={artist.phone}
-							rating= {artist.rating}
+							rating={artist.rating}
 							reviewCount={artist.reviewCount}
 							avatarUrl={artist.avatar}
-							bgColor={"#fef2f2"}
-							
+							bgColor={
+								artist.status === 0
+									? "#dbeafe" // blue-100
+									: artist.status === 1
+									? "#d1fae5" // emerald-100
+									: artist.status === 2
+									? "#fee2e2" // red-100
+									: "#f3f4f6"
+							} // gray-100}
+							status={artist.status}
 						/>
 					))
 				)}

@@ -4,6 +4,7 @@ import {
 	setCustomerSearch,
 	setArtistSearch,
 	setArtistSearchReview,
+	setArtistStatusFilter,
 	setDate,
 } from "../redux/slices/searchSlice";
 import DatePicker from "react-datepicker";
@@ -11,7 +12,7 @@ import "react-datepicker/dist/react-datepicker.css";
 // import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 interface SearchFilterBarProps {
-  context: "customers" | "artists" | "reviews" | "appointments";
+	context: "customers" | "artists" | "reviews" | "appointments";
 }
 export default function SearchFilterBar({ context }: SearchFilterBarProps) {
 	const dispatch = useDispatch();
@@ -21,8 +22,11 @@ export default function SearchFilterBar({ context }: SearchFilterBarProps) {
 	const artistSearch = useSelector(
 		(state: RootState) => state.search.artistSearch,
 	);
-  const artistSearchReview = useSelector(
+	const artistSearchReview = useSelector(
 		(state: RootState) => state.search.artistSearchReview,
+	);
+	const artistStatusFilter = useSelector(
+		(state: RootState) => state.search.artistStatusFilter,
 	);
 	const date = useSelector((state: RootState) => state.search.date);
 	// const location = useLocation();
@@ -31,32 +35,34 @@ export default function SearchFilterBar({ context }: SearchFilterBarProps) {
 	// const isCustomersPage = pathname === "/customers";
 	// const isArtistsPage = pathname === "/artists";
 	// const isReviewPage = pathname == "/reviews";
-  // Determine value
-  // 1. local state để buffer text trước khi dispatch
-  const reduxValue =
-    context === "artists" ? artistSearch :
-    context === "reviews" ? artistSearchReview :
-    customerSearch;
+	// Determine value
+	// 1. local state để buffer text trước khi dispatch
+	const reduxValue =
+		context === "artists"
+			? artistSearch
+			: context === "reviews"
+			? artistSearchReview
+			: customerSearch;
 
-  const [inputValue, setInputValue] = useState(reduxValue);
+	const [inputValue, setInputValue] = useState(reduxValue);
 
-  // 2. sync Redux -> local state nếu Redux thay đổi từ nơi khác
-  useEffect(() => {
-    setInputValue(reduxValue);
-  }, [reduxValue]);
+	// 2. sync Redux -> local state nếu Redux thay đổi từ nơi khác
+	useEffect(() => {
+		setInputValue(reduxValue);
+	}, [reduxValue]);
 
-  // 3. dispatch khi người dùng nhập
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value;
-    setInputValue(val);
-    if (context === "artists") {
-      dispatch(setArtistSearch(val));
-    } else if (context === "reviews") {
-      dispatch(setArtistSearchReview(val));
-    } else {
-      dispatch(setCustomerSearch(val));
-    }
-  };
+	// 3. dispatch khi người dùng nhập
+	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const val = e.target.value;
+		setInputValue(val);
+		if (context === "artists") {
+			dispatch(setArtistSearch(val));
+		} else if (context === "reviews") {
+			dispatch(setArtistSearchReview(val));
+		} else {
+			dispatch(setCustomerSearch(val));
+		}
+	};
 	return (
 		<div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 mb-4">
 			<input
@@ -66,12 +72,6 @@ export default function SearchFilterBar({ context }: SearchFilterBarProps) {
 				value={inputValue}
 				onChange={onChange}
 			/>
-			<button className="bg-green-100 text-green-700 px-4 py-2 rounded-full">
-				Service
-			</button>
-			<button className="bg-green-100 text-green-700 px-4 py-2 rounded-full">
-				Artist
-			</button>
 			<div className="sm:ml-auto flex items-center gap-2">
 				{context === "appointments" && (
 					<DatePicker
@@ -95,10 +95,22 @@ export default function SearchFilterBar({ context }: SearchFilterBarProps) {
 						scrollableYearDropdown
 					/>
 				)}
-				{(context === "customers" || context === "artists") && (
+				{/* {(context === "artists") && (
 					<button className="bg-green-100 text-green-700 px-4 py-2 rounded-full">
-						+ Add {context === "customers" ? "Customer" : "Artist"}
+						Filter
 					</button>
+				)} */}
+				{context === "artists" && (
+					<select
+						value={artistStatusFilter}
+						onChange={(e) => dispatch(setArtistStatusFilter(e.target.value))}
+						className="border px-3 py-2 rounded-full bg-gray-50 text-gray-700"
+					>
+						<option value="">All Status</option>
+						<option value="0">Requested</option>
+						<option value="1">Accepted</option>
+						<option value="2">Rejected</option>
+					</select>
 				)}
 			</div>
 		</div>

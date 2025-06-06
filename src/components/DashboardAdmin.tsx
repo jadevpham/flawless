@@ -681,7 +681,7 @@ export default function DashboardAdmin() {
 										/>
 										<div>
 											<div className="font-semibold">{artist.nameAr}</div>
-											<div className="text-xs text-gray-500">{artist.idAr}</div>
+											{/* <div className="text-xs text-gray-500">{artist.idAr}</div> */}
 										</div>
 									</div>
 									<div>{formatCurrencyVND(artist.totalRevenueInMonth)}</div>

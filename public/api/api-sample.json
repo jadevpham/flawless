@@ -1,3 +1,30 @@
+GET appointment: {
+	"totalAppointment": [
+		{
+			"id": string,
+			"nameCus": string,
+			"avatarCus": string,
+			"date": string,
+			"time": string,
+			"nameAr": string,
+			"service": string,
+			"status": number,  // Pending = 0, Confirmed = 1, Completed = 3,  Cancelled = 4, Rejected = 4
+			"transaction": [
+				{
+					"amound": number,
+					"type": number,    // CustomerPayment (chuyển cho customer) = 0, Refund (chuyển 100% cho customer) = 1, CancellationPayoutArtist = 2,
+					"status": number, // Pending = 0, Completed = 1, Failed = 2, Cancelled = 3
+					"paymentMethod": string,
+					"createAt": {
+						"date": string,
+						"time": string
+					}
+				}
+			]
+		}
+	]
+}
+
 GET customers: {
 	"customerList": [
 		{
@@ -38,7 +65,7 @@ GET artists: {
 			"avatar": string,
 			"role": string,
 			"specialty": string,
-			"status": number,
+			"status": number,   // Requested: 0, Accepted: 1, Rejected: 2
 			"gender": number,
 			"phone": string,
 			"email": string,
@@ -206,6 +233,7 @@ GET dardboardAdmin {
 		]
 	},
 	"bestArist": [
+		// Lưu ý chỉ hiện những artist đã được accept rồi
 		{
 			"year": number,
 			"months": {

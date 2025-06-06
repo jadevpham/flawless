@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../redux/store";
-import CustomerTableRow from "./CustomerTableRow";
+import CustomerListTableRow from "./CustomerListTableRow";
 import Pagination from "./Pagination";
 import { fetchCustomerList } from "@/redux/slices/customerListSlice";
 
@@ -57,12 +57,12 @@ export default function CustomerListTable() {
 				<table className="w-full text-sm">
 					<thead>
 						<tr className="text-gray-400 text-left border-b">
-							<th className="py-3 px-4 font-normal">Customer ID</th>
+							{/* <th className="py-3 px-4 font-normal">Customer ID</th> */}
 							<th className="py-3 px-4 font-normal">Name</th>
 							<th className="py-3 px-4 font-normal">Email</th>
 							<th className="py-3 px-4 font-normal">Phone</th>
 							<th className="py-3 px-4 font-normal">Address</th>
-							<th className="py-3 px-4 font-normal">Status</th>
+							<th className="py-3 px-4 font-normal">User Tier</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -76,7 +76,7 @@ export default function CustomerListTable() {
 								</td>
 							</tr>
 						) : (
-							currentItems.map((c) => <CustomerTableRow 
+							currentItems.map((c) => <CustomerListTableRow 
                             key={c.idCus}
                             idCus={c.idCus}
                             nameCus={c.nameCus}
@@ -84,7 +84,7 @@ export default function CustomerListTable() {
                             datetime={c.email}
                             nameAr={c.phone.toLocaleString()}
                             service={c.address}
-                            status={c.status === 1 ? "Available" : "Banned"}
+                            status={c.status}
                              />)
 						)}
 					</tbody>

@@ -1,24 +1,42 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import type { RootState } from "../redux/store"; // path đến store của bạn
+import { useNavigate, useParams } from "react-router-dom"; // path đến store của bạn
 import { Banknote, Hash, User } from "lucide-react";
 import ProductChips from "./ProductChips";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState, AppDispatch } from "../redux/store";
+import axios from "axios";
+import { fetchArtistList } from "@/redux/slices/artistListSlice";
+import Swal from "sweetalert2";
+
 export default function ArtistDetail() {
 	const { id } = useParams<{ id: string }>();
 	const artistList = useSelector(
 		(state: RootState) => state.artistList.artistList,
 	);
 
-	const artist = artistList.find((a) => a.idArtist === id);
-
+	const artist = artistList.find((a) => a.id === id);
+	console.log("artist in ArtistDetail.tsx: ", artist);
 	if (!artist) {
 		return <p>Artist not found or loading...</p>;
 	}
 	const navigate = useNavigate();
 
 	const handleViewSchedule = () => {
-		navigate(`/artists/${artist.idArtist}/schedule`);
+		navigate(`/artists/${artist.id}/schedule`);
 	};
+
+	const dispatch = useDispatch<AppDispatch>();
+	const handleUpdateStatus = async (id: string, newStatus: number) => {
+		try {
+			await axios.patch(`http://localhost:3001/artistList/${id}`, {
+				status: newStatus,
+			});
+
+			dispatch(fetchArtistList());
+		} catch (error) {
+			console.error("Failed to update artist status:", error);
+		}
+	};
+
 	return (
 		<div className="grid grid-cols-1 lg:grid-cols-4 gap-6 bg-[#f8f9fa] text-sm text-gray-700">
 			{/* Profile Card */}
@@ -58,7 +76,7 @@ export default function ArtistDetail() {
 					{/* Nội dung chính */}
 					<div className="mb-4">
 						<p className="text-base font-bold text-gray-900">{artist.role}</p>
-						<p className="text-sm text-gray-600">{artist.idArtist}</p>
+						{/* <p className="text-sm text-gray-600">{artist.idArtist}</p> */}
 					</div>
 
 					{/* Ngày hết hạn */}
@@ -70,13 +88,23 @@ export default function ArtistDetail() {
 					{/* Badge Active */}
 					<span
 						className={`absolute bottom-3 right-4 text-xs px-3 py-1 rounded-full font-semibold shadow-sm
-    ${
-			artist.status === 1
-				? "bg-blue-100 text-blue-700"
-				: "bg-red-100 text-orange-700"
+		${
+			artist.status === 0
+				? "bg-blue-100 text-blue-800"
+				: artist.status === 1
+				? "bg-emerald-100 text-emerald-800"
+				: artist.status === 2
+				? "bg-red-100 text-red-700"
+				: "bg-gray-100 text-gray-700"
 		}`}
 					>
-						{artist.status === 1 ? "Active" : "Inactive"}
+						{artist.status === 0
+							? "Requested"
+							: artist.status === 1
+							? "Accepted"
+							: artist.status === 2
+							? "Rejected"
+							: "Unknow"}
 					</span>
 				</div>
 				<div className="bg-white rounded-xl p-4 shadow-lg space-y-3 text-sm text-gray-700">
@@ -93,10 +121,10 @@ export default function ArtistDetail() {
 					<hr className="my-2 border-gray-200" />
 
 					<ul className="space-y-1 text-sm text-gray-700">
-						<li>
+						{/* <li>
 							<span className="text-gray-500">ID Artist</span>{" "}
 							<span className="float-right font-medium">{artist.idArtist}</span>
-						</li>
+						</li> */}
 						<li>
 							<span className="text-gray-500">Gender</span>{" "}
 							<span className="float-right font-medium">
@@ -120,6 +148,78 @@ export default function ArtistDetail() {
 					>
 						View Schedule
 					</button>
+
+					{/*  */}
+					{/* {artist.status === 0 && (
+  <>
+    <button
+      onClick={() => handleUpdateStatus(artist.id, 1)} // Accepted
+      className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-md mr-2"
+    >
+      Accept
+    </button>
+    <button
+      onClick={() => handleUpdateStatus(artist.id, 2)} // Rejected
+      className="bg-red-100 text-red-800 px-3 py-1 rounded-md"
+    >
+      Reject
+    </button>
+  </>
+)}
+
+{artist.status === 2 && (
+  <button
+    onClick={() => handleUpdateStatus(artist.id, 1)} // Re-accept
+    className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-md"
+  >
+    Accept
+  </button>
+)} */}
+					{artist.status === 0 && (
+						<>
+							<button
+								onClick={() => {
+									Swal.fire({
+										title: "Accept artist?",
+										text: "Are you sure you want to accept this artist?",
+										icon: "question",
+										showCancelButton: true,
+										confirmButtonText: "Yes, Accept",
+										cancelButtonText: "Cancel",
+										confirmButtonColor: "#10b981", // emerald-500
+									}).then((result) => {
+										if (result.isConfirmed) {
+											handleUpdateStatus(artist.id, 1); // Accepted
+										}
+									});
+								}}
+								className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-md mr-2"
+							>
+								Accept
+							</button>
+
+							<button
+								onClick={() => {
+									Swal.fire({
+										title: "Reject artist?",
+										text: "Are you sure you want to reject this artist?",
+										icon: "warning",
+										showCancelButton: true,
+										confirmButtonText: "Yes, Reject",
+										cancelButtonText: "Cancel",
+										confirmButtonColor: "#ef4444", // red-500
+									}).then((result) => {
+										if (result.isConfirmed) {
+											handleUpdateStatus(artist.id, 2); // Rejected
+										}
+									});
+								}}
+								className="bg-red-100 text-red-800 px-3 py-1 rounded-md"
+							>
+								Reject
+							</button>
+						</>
+					)}
 				</div>
 			</div>
 

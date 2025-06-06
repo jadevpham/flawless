@@ -4,7 +4,7 @@ import CustomerListTable from "../components/CustomerListTable";
 export default function CustomerListPage() {
 	return (
 		<>
-			<SearchFilterBar context="artists"/>
+			<SearchFilterBar context="customers"/>
 			<CustomerListTable />
 		</>
 	);

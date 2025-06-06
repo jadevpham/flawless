@@ -13,6 +13,7 @@ import SchedulePage from "./pages/SchedulePage";
 import HomePage from "./pages/HomePage";
 import DashboardAdminPage from "./pages/DashBoardAdminPage";
 import ServicePage from "./pages/ServicePage";
+import PaymentPage from "./pages/PaymentPage";
 
 export default function App() {
 	return (
@@ -22,11 +23,10 @@ export default function App() {
 					<BrowserRouter>
 						<Routes>
 							{/* Route không có layout (ví dụ: trang chủ) */}
+							<Route path="/" element={<Navigate to="/home" />} />
 							<Route path="/home" element={<HomePage />} />
-
 							{/* Route có layout dùng Outlet */}
 							<Route element={<Layout />}>
-								<Route path="/" element={<Navigate to="/dashboard-admin" />} />
 								<Route
 									path="/dashboard-admin"
 									element={<DashboardAdminPage />}
@@ -40,7 +40,8 @@ export default function App() {
 									path="/artists/:id/schedule"
 									element={<SchedulePage />}
 								/>
-								<Route path="/services" element={<ServicePage/>} />
+								<Route path="/services" element={<ServicePage />} />
+								<Route path="/payments" element={<PaymentPage />} />
 								{/* thêm các route khác ở đây */}
 							</Route>
 						</Routes>

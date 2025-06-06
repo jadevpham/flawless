@@ -41,7 +41,7 @@
                     "timebooking": "2024-08-15 - 05:47 PM"
                 }
             ],
-            "status": 1,
+            "status": 0,
             "gender": 1,
             "phone": "0996470615",
             "email": "monica64@morris.com",
@@ -103,7 +103,7 @@
                     "timebooking": "2024-09-26 - 06:33 PM"
                 }
             ],
-            "status": 0,
+            "status": 1,
             "gender": 0,
             "phone": "0900296849",
             "email": "frylori@vaughn.com",
@@ -137,7 +137,7 @@
                     "timebooking": "2025-05-27 - 07:27 AM"
                 }
             ],
-            "status": 0,
+            "status": 2,
             "gender": -1,
             "phone": "0976736624",
             "email": "john31@wilson-wright.info",
@@ -191,7 +191,7 @@
                     "timebooking": "2024-10-26 - 11:27 PM"
                 }
             ],
-            "status": 0,
+            "status": 3,
             "gender": 1,
             "phone": "0994823175",
             "email": "gary14@nichols.com",
@@ -238,7 +238,7 @@
                     "timebooking": "2025-05-31 - 10:55 AM"
                 }
             ],
-            "status": 1,
+            "status": 0,
             "gender": -1,
             "phone": "0999247948",
             "email": "matthewbooker@gmail.com",
@@ -278,7 +278,7 @@
                     "timebooking": "2024-06-08 - 03:27 AM"
                 }
             ],
-            "status": 0,
+            "status": 1,
             "gender": -1,
             "phone": "0958314576",
             "email": "joan44@howe.com",
@@ -325,7 +325,7 @@
                     "timebooking": "2025-03-23 - 09:38 AM"
                 }
             ],
-            "status": 1,
+            "status": 2,
             "gender": -1,
             "phone": "0982018832",
             "email": "daniel62@evans.org",
@@ -379,7 +379,7 @@
                     "timebooking": "2024-11-17 - 11:04 PM"
                 }
             ],
-            "status": 0,
+            "status": 3,
             "gender": -1,
             "phone": "0975424945",
             "email": "paigesellers@yahoo.com",
@@ -426,7 +426,7 @@
                     "timebooking": "2024-09-03 - 03:47 PM"
                 }
             ],
-            "status": 1,
+            "status": 0,
             "gender": 0,
             "phone": "0926561766",
             "email": "ejenkins@mitchell.net",
@@ -518,7 +518,7 @@
                     "timebooking": "2025-02-28 - 11:54 PM"
                 }
             ],
-            "status": 1,
+            "status": 2,
             "gender": 1,
             "phone": "0930353800",
             "email": "jason07@yahoo.com",
@@ -566,7 +566,7 @@
                     "timebooking": "2025-02-24 - 08:43 AM"
                 }
             ],
-            "status": 1,
+            "status": 3,
             "gender": 0,
             "phone": "0986936427",
             "email": "bkey@hotmail.com",
@@ -680,7 +680,7 @@
                     "timebooking": "2024-10-25 - 01:24 AM"
                 }
             ],
-            "status": 0,
+            "status": 2,
             "gender": 1,
             "phone": "0921492153",
             "email": "susanhernandez@yahoo.com",
@@ -734,7 +734,7 @@
                     "timebooking": "2025-06-01 - 05:20 PM"
                 }
             ],
-            "status": 1,
+            "status": 3,
             "gender": -1,
             "phone": "0930329892",
             "email": "james31@yahoo.com",

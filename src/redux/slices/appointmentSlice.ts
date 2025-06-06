@@ -1,13 +1,25 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+export interface Transaction {
+	amound: number;
+	type: number; // CustomerPayment (chuyển cho customer) = 0, Refund (chuyển 100% cho customer) = 1, CancellationPayoutArtist    = 2,
+	status: number; // Pending = 0, Completed = 1, Failed = 2, Cancelled = 3
+	paymentMethod: string;
+	createAt: {
+		date: string;
+		time: string;
+	};
+}
 export interface Appointment {
-    idCus: string,
+    id: string,
     nameCus: string,
     avatarCus: string,
-    datetime: string,
+    date: string,
+    time: string,
     nameAr: string,
     service: string,
-    status: string
+    status: number,
+	  transaction: Transaction[];
   }
 interface AppointmentState {
     totalAppointment: Appointment[];
@@ -23,8 +35,9 @@ const initialState: AppointmentState = {
 export const fetchTotalAppointment = createAsyncThunk(
   'appointment/fetchTotalAppointment',
   async () => {
-    const response = await axios.get('/api/totalAppointment.json'); // Đảm bảo file này nằm trong public/
-    return response.data.totalAppointment as Appointment[];
+    // const response = await axios.get('/api/totalAppointment.json'); // Đảm bảo file này nằm trong public
+    const response = await axios.get("http://localhost:3001/totalAppointment");
+    return response.data as Appointment[];
   }
 );
 

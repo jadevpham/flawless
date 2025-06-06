@@ -7,7 +7,7 @@
         "datetime": "2025-06-06 - 08:34 PM",
         "nameAr": "Dr. Ava Lewis",
         "service": "Microdermabrasion",
-        "status": "In Progress"
+        "status": 0
       },
       {
         "idCus": "CU-002",
@@ -16,7 +16,7 @@
         "datetime": "2025-05-24 - 01:18 PM",
         "nameAr": "Dr. Sophia Hall",
         "service": "Laser Treatment",
-        "status": "In Progress"
+        "status": 1
       },
       {
         "idCus": "CU-003",
@@ -25,7 +25,7 @@
         "datetime": "2025-05-26 - 08:09 PM",
         "nameAr": "Dr. Mia Turner",
         "service": "Botox",
-        "status": "Upcoming"
+        "status": 2
       },
       {
         "idCus": "CU-004",
@@ -34,7 +34,7 @@
         "datetime": "2025-06-21 - 09:21 PM",
         "nameAr": "Dr. Mia Turner",
         "service": "Laser Treatment",
-        "status": "In Progress"
+        "status": 3
       },
       {
         "idCus": "CU-005",
@@ -43,7 +43,7 @@
         "datetime": "2025-06-08 - 09:47 PM",
         "nameAr": "Dr. Mia Turner",
         "service": "Microdermabrasion",
-        "status": "Upcoming"
+        "status": 4
       },
       {
         "idCus": "CU-006",
@@ -52,7 +52,7 @@
         "datetime": "2025-06-27 - 09:29 PM",
         "nameAr": "Dr. Emma Scott",
         "service": "Microdermabrasion",
-        "status": "In Progress"
+        "status": 0
       },
       {
         "idCus": "CU-007",
@@ -61,7 +61,7 @@
         "datetime": "2025-05-28 - 03:22 PM",
         "nameAr": "Dr. Emma Scott",
         "service": "Facial Rejuvenation",
-        "status": "Upcoming"
+        "status": 1
       },
       {
         "idCus": "CU-008",
@@ -70,7 +70,7 @@
         "datetime": "2025-06-16 - 12:29 AM",
         "nameAr": "Dr. Sophia Hall",
         "service": "Botox",
-        "status": "Completed"
+        "status": 2
       },
       {
         "idCus": "CU-009",
@@ -79,7 +79,7 @@
         "datetime": "2025-05-02 - 05:49 PM",
         "nameAr": "Dr. Emma Scott",
         "service": "Chemical Peel",
-        "status": "In Progress"
+        "status": 3
       },
       {
         "idCus": "CU-010",
@@ -88,7 +88,7 @@
         "datetime": "2025-06-22 - 08:05 PM",
         "nameAr": "Dr. Emma Scott",
         "service": "Microdermabrasion",
-        "status": "Upcoming"
+        "status": 4
       },
       {
         "idCus": "CU-011",
@@ -97,7 +97,7 @@
         "datetime": "2025-06-07 - 03:33 PM",
         "nameAr": "Dr. Mia Turner",
         "service": "Microdermabrasion",
-        "status": "In Progress"
+        "status": 0
       },
       {
         "idCus": "CU-012",
@@ -106,7 +106,7 @@
         "datetime": "2025-06-19 - 03:34 PM",
         "nameAr": "Dr. Emma Scott",
         "service": "Laser Treatment",
-        "status": "Completed"
+        "status": 1
       },
       {
         "idCus": "CU-013",
@@ -115,7 +115,7 @@
         "datetime": "2025-05-11 - 05:21 AM",
         "nameAr": "Dr. Ava Lewis",
         "service": "Microdermabrasion",
-        "status": "Completed"
+        "status": 2
       },
       {
         "idCus": "CU-014",
@@ -124,7 +124,7 @@
         "datetime": "2025-06-18 - 01:14 PM",
         "nameAr": "Dr. Mia Turner",
         "service": "Botox",
-        "status": "Completed"
+        "status": 3
       },
       {
         "idCus": "CU-015",
@@ -133,7 +133,7 @@
         "datetime": "2025-05-17 - 07:30 AM",
         "nameAr": "Dr. Sophia Hall",
         "service": "Facial Rejuvenation",
-        "status": "In Progress"
+        "status": 4
       },
       {
         "idCus": "CU-016",
@@ -142,7 +142,7 @@
         "datetime": "2025-06-24 - 02:32 PM",
         "nameAr": "Dr. Sophia Hall",
         "service": "Botox",
-        "status": "In Progress"
+        "status": 0
       },
       {
         "idCus": "CU-017",
@@ -151,7 +151,7 @@
         "datetime": "2025-05-04 - 03:40 PM",
         "nameAr": "Dr. Emma Scott",
         "service": "Chemical Peel",
-        "status": "Upcoming"
+        "status": 1
       },
       {
         "idCus": "CU-018",
@@ -160,7 +160,7 @@
         "datetime": "2025-06-25 - 04:35 AM",
         "nameAr": "Dr. Sophia Hall",
         "service": "Botox",
-        "status": "Completed"
+        "status": 2
       },
       {
         "idCus": "CU-019",
@@ -169,7 +169,7 @@
         "datetime": "2025-06-13 - 04:37 AM",
         "nameAr": "Dr. Mia Turner",
         "service": "Microdermabrasion",
-        "status": "Completed"
+        "status": 3
       },
       {
         "idCus": "CU-020",
@@ -178,7 +178,7 @@
         "datetime": "2025-05-28 - 02:09 AM",
         "nameAr": "Dr. Sophia Hall",
         "service": "Botox",
-        "status": "Upcoming"
+        "status": 4
       }
     ]
   }

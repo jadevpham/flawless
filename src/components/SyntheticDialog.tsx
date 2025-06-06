@@ -122,9 +122,9 @@ export default function SyntheticDialog({
 											<p className="text-base font-semibold text-gray-900">
 												{closestCustomer.name}
 											</p>
-											<p className="text-sm text-gray-500">
-												{closestCustomer.id}
-											</p>
+											{/* <p className="text-sm text-gray-500">
+												{closestCustomer.}
+											</p> */}
 										</div>
 									</div>
 									{/* Artist Info */}

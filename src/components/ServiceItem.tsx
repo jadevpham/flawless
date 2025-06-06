@@ -48,11 +48,10 @@ export default function ServiceItem({
 						</div> */}
 					{/* </div> */}
 					<h3 className="font-bold text-lg">{nameSer}</h3>
-					<p className="text-sm text-gray-500">
-						{idSer} ・ {nameAr}
-					</p>
-					<p className="text-sm text-gray-500">
-						<i className="fa-solid fa-phone mr-1"></i> {price}
+					<p className="text-sm text-gray-500"> {nameAr}</p>
+					<p className="text-sm text-red-500">
+					<i className="fa-solid fa-money-bill-wave mr-1"></i>
+					{price}
 					</p>
 					<div className="flex justify-center items-center gap-1 text-yellow-500 text-sm">
 						{/* {Array.from({ length: 5 }).map((_, i) => (

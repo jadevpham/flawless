@@ -65,7 +65,7 @@ const Schedule = () => {
 	const artistList = useSelector(
 		(state: RootState) => state.artistList.artistList,
 	);
-	const artist = artistList.find((a) => a.idArtist === id);
+	const artist = artistList.find((a) => a.id === id);
 
 	if (!artist) {
 		return (

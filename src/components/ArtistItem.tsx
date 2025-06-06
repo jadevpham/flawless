@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
 interface ArtistItemProps {
 	name: string;
-	code: string;  //idArtist
+	code: string; //idArtist
 	specialty: string;
 	phone: string;
 	rating: number;
 	reviewCount: number;
 	avatarUrl: string;
 	bgColor: string;
+	status: number;
 }
 
 export default function ArtistItem({
@@ -19,6 +20,7 @@ export default function ArtistItem({
 	reviewCount,
 	avatarUrl,
 	bgColor,
+	status,
 }: ArtistItemProps) {
 	const navigate = useNavigate();
 
@@ -51,10 +53,53 @@ export default function ArtistItem({
 							/>
 						</div>
 					</div>
-					<h3 className="font-bold text-lg">{name}</h3>
-					<p className="text-sm text-gray-500">
-						{code} ・ {specialty}
-					</p>
+					{/* <div className="flex flex-wrap items-center text-center gap-x-1">
+					<h2 className="font-bold text-lg break-words">{name} ·{" "}</h2>
+					<h3
+						className={`font-semibold text-sm ${
+							status === 0
+								? "text-blue-800"
+								: status === 1
+								? "text-emerald-800"
+								: status === 2
+								? " text-red-700"
+								: "text-gray-700"
+						}`}
+					>
+						{status === 0
+							? "Requested"
+							: status === 1
+							? "Accepted"
+							: status === 2
+							? "Rejected"
+							: "Unknown"}
+					</h3>
+					</div> */}
+					<div className="text-center break-words">
+						<p className="font-bold text-lg inline">
+							{name} ·{" "}
+							<span
+								className={`font-medium text-sm ${
+									status === 0
+										? "text-blue-800"
+										: status === 1
+										? "text-emerald-800"
+										: status === 2
+										? "text-red-700"
+										: "text-gray-700"
+								}`}
+							>
+								{status === 0
+									? "Requested"
+									: status === 1
+									? "Accepted"
+									: status === 2
+									? "Rejected"
+									: "Unknown"}
+							</span>
+						</p>
+					</div>
+					<p className="text-sm text-gray-500">{specialty}</p>
 					<p className="text-sm text-gray-500">
 						<i className="fa-solid fa-phone mr-1"></i> {phone}
 					</p>
