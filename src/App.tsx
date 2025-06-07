@@ -23,6 +23,7 @@ export default function App() {
 				<div className="w-full max-w-[100vw] overflow-x-hidden">
 					<BrowserRouter>
 						<Routes>
+							{/* diễm thêm này */}
 							<Route path="/login" element={<Login />} />
 
 							{/* Route không có layout (ví dụ: trang chủ) */}

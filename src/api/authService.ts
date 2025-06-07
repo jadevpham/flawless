@@ -13,6 +13,7 @@ type DecodedToken = {
   iss: string;
   aud: string;
 };
+
 const authService = {
   login: async (email: string, password: string) => {
     console.log("Sending login with:", { email, password });

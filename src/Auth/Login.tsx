@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { Eye, EyeOff, User, Lock, Sparkles } from "lucide-react";
-import Flawlesslogo from "../assets/Flawlesslogo.jpg";
+import Flawlesslogo from "../assets/Flawlesslogo1.jpg";
 import { useAuthStore } from "@/store/authStore";
 import authService from "@/api/authService";
 import GoogleLoginButton from "./GoogleAuth";
@@ -86,31 +86,6 @@ const customTheme = createTheme({
 	},
 });
 
-// type Login2FAResponse = {
-// 	requiresTwoFactor: true;
-// 	message: string;
-// 	isSuccess: boolean;
-// };
-
-// type LoginSuccessResponse = {
-// 	isSuccess: true;
-// 	token: string;
-// 	refreshToken: string;
-// 	name: string;
-// 	email: string;
-// 	tagname: string;
-// 	role: string;
-// };
-
-// type LoginErrorResponse = {
-// 	isSuccess: false;
-// 	errorMessage: string;
-// };
-
-// type LoginResponse =
-// 	| Login2FAResponse
-// 	| LoginSuccessResponse
-// 	| LoginErrorResponse;
 
 const Login: React.FC = () => {
 	const [email, setEmail] = useState<string>("");
