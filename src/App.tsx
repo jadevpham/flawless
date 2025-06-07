@@ -14,6 +14,7 @@ import HomePage from "./pages/HomePage";
 import DashboardAdminPage from "./pages/DashBoardAdminPage";
 import ServicePage from "./pages/ServicePage";
 import PaymentPage from "./pages/PaymentPage";
+import Login from "./Auth/Login";
 
 export default function App() {
 	return (
@@ -22,6 +23,9 @@ export default function App() {
 				<div className="w-full max-w-[100vw] overflow-x-hidden">
 					<BrowserRouter>
 						<Routes>
+							{/* diễm thêm này */}
+							<Route path="/login" element={<Login />} />
+
 							{/* Route không có layout (ví dụ: trang chủ) */}
 							<Route path="/" element={<Navigate to="/home" />} />
 							<Route path="/home" element={<HomePage />} />
