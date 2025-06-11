@@ -111,7 +111,7 @@ const HomePage = () => {
 			<section className="relative h-[82vh] overflow-hidden text-white">
 				<video
 					className="absolute top-0 left-0 w-full h-full object-cover"
-					src="/banner.mp4"
+					src="/banner_fixed.mp4"
 					autoPlay
 					muted
 					loop
@@ -229,19 +229,21 @@ const HomePage = () => {
 				</header>
 				{/* Overlay content */}
 				<div className="relative z-20 flex items-center justify-center h-full px-4 text-center">
-					<div>
-						<h1 className="text-4xl md:text-5xl font-light">
-							Bringing the most <br />
-							<span className="text-purple-300 font-semibold italic">
-								Wonderful Experiences
-							</span>
-							<br />
-							right to you
-						</h1>
-						<button className="mt-6 px-6 py-2 text-[#874C8B] hover:text-xl hover:bg-[#E9DCEB] hover:text-[#6A3471] rounded-full transition">
-							BOOK NOW
-						</button>
-					</div>
+				<div className="space-y-8">
+  <h1 className="text-4xl md:text-5xl font-light leading-relaxed">
+    Bringing the most <br />
+    <span className="text-purple-300 font-semibold italic">
+      Wonderful Experiences
+    </span>
+    <br />
+    right to you
+  </h1>
+  <button className="px-6 py-2 text-[#874C8B] hover:text-xl hover:bg-[#E9DCEB] hover:text-[#6A3471] rounded-full transition">
+    BOOK NOW
+  </button>
+</div>
+
+
 				</div>
 			</section>
 
@@ -467,54 +469,46 @@ const HomePage = () => {
 					className="overflow-hidden py-6 bg-[#FCF5FA]"
 					// style={{ backgroundImage: `url(img/bg-why.webp)` }}
 				>
-					<style>
-						{`
-@keyframes scroll-x {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-`}
-					</style>
+<style>
+  {`
+    @keyframes scroll-x {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
 
-					<div className="relative overflow-hidden">
-						<div className="flex gap-6 animate-scroll-x whitespace-nowrap">
-							{["kol1", "kol2", "kol3", "kol4", "kol5", "kol6", "kol7", "kol8"]
-								.flatMap(
-									(img, i, arr) => [img, ...arr], // nhân đôi mảng ảnh trong vòng lặp
-								)
-								.map((img, i) => (
-									<div
-										key={i}
-										className="h-64 w-40 flex-shrink-0 rounded-md overflow-hidden shadow-md bg-white"
-									>
-										<img
-											src={`/img/${img}.jpg`}
-											alt=""
-											className="w-full h-full object-cover"
-										/>
-									</div>
-								))}
-						</div>
-					</div>
-					{/* Pause on hover */}
-					<style>
-						{`
-      .animate-scroll-x {
-        animation: scroll-x 20s linear infinite;
-      }
-      .animate-scroll-x:hover {
-        animation-play-state: paused;
-      }
-      @keyframes scroll-x {
-        0% {
-          transform: translateX(0%);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-    `}
-					</style>
+    .animate-scroll-x {
+      animation: scroll-x 20s linear infinite;
+    }
+
+    .animate-scroll-x:hover {
+      animation-play-state: paused;
+    }
+  `}
+</style>
+
+<div className="relative overflow-hidden">
+  <div className="flex gap-6 animate-scroll-x whitespace-nowrap w-max">
+    {["kol1", "kol2", "kol3", "kol4", "kol5", "kol6", "kol7", "kol8", "kol9", "kol10", "kol1", "kol2", "kol3", "kol4", "kol5", "kol6", "kol7", "kol8", "kol9", "kol10"].map(
+      (img, i) => (
+        <div
+          key={i}
+          className="h-64 w-40 flex-shrink-0 rounded-md overflow-hidden shadow-md bg-white"
+        >
+          <img
+            src={`/img/${img}.jpg`}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )
+    )}
+  </div>
+</div>
+
 				</div>
 			</section>
 
