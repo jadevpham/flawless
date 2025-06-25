@@ -125,14 +125,14 @@ GET artists: {
 
 GET dardboardAdmin {
 	"totalRevenue": {
-		"totalIcomeAllYear": number,
+		"totalIncomeAllYear": number,
 		"perYear": [
 			{
 				"year": number,
-				"totalIcomePerYear": number,
+				"totalIncomePerYear": number,
 				"totalNetProfitPerYear": number,
 				"totalRefundPerYear": number,
-				"bestIcome": {
+				"bestIncome": {
 					"month": "",
 					"income": number
 				},

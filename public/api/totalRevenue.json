@@ -1,13 +1,13 @@
 {
   "totalRevenue": {
-    "totalIcomeAllYear": 229525,
+    "totalIncomeAllYear": 229525,
     "perYear": [
       {
         "year": 2023,
-        "totalIcomePerYear": 74900,
+        "totalIncomePerYear": 74900,
         "totalNetProfitPerYear": 42400,
         "totalRefundPerYear": 28750,
-        "bestIcome": {
+        "bestIncome": {
           "month": "Dec",
           "income": 7100
         },
@@ -64,10 +64,10 @@
       },
       {
         "year": 2024,
-        "totalIcomePerYear": 77600,
+        "totalIncomePerYear": 77600,
         "totalNetProfitPerYear": 42400,
         "totalRefundPerYear": 29700,
-        "bestIcome": {
+        "bestIncome": {
           "month": "Dec",
           "income": 7300
         },
@@ -124,10 +124,10 @@
       },
       {
         "year": 2025,
-        "totalIcomePerYear": 77025,
+        "totalIncomePerYear": 77025,
         "totalNetProfitPerYear": 42600,
         "totalRefundPerYear": 28600,
-        "bestIcome": {
+        "bestIncome": {
           "month": "Dec",
           "income": 7300
         },

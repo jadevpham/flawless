@@ -125,16 +125,17 @@ const HomePage = () => {
 						{/* Logo */}
 						<div className="flex items-center gap-1 text-white font-semibold tracking-widest text-sm md:text-sm leading-snug">
 							{/* <h1 style={{ fontFamily: "'Allura', cursive" }}>FLAW</h1> */}
-							<img src="/logo.svg" alt="Flawless Logo" className="w-[200px] h-auto filter invert" />
+							<img
+								src="/logo.svg"
+								alt="Flawless Logo"
+								className="w-[200px] h-auto filter invert"
+							/>
 							{/* <h1 style={{ fontFamily: "'Allura', cursive" }}>LESS</h1> */}
 						</div>
 
 						{/* Desktop Menu */}
 						<nav className="hidden md:flex gap-6 text-lg">
-							<Link
-								to="/services"
-								className="text-white hover:text-pink-500"
-							>
+							<Link to="/services" className="text-white hover:text-pink-500">
 								Service
 							</Link>
 							<Link to="/about" className="text-white hover:text-pink-500">
@@ -143,10 +144,7 @@ const HomePage = () => {
 							<Link to="/blog" className="text-white hover:text-pink-500">
 								Blog
 							</Link>
-							<Link
-								to="/contact"
-								className="text-white hover:text-pink-500"
-							>
+							<Link to="/contact" className="text-white hover:text-pink-500">
 								Contact
 							</Link>
 						</nav>
@@ -229,21 +227,19 @@ const HomePage = () => {
 				</header>
 				{/* Overlay content */}
 				<div className="relative z-20 flex items-center justify-center h-full px-4 text-center">
-				<div className="space-y-8">
-  <h1 className="text-4xl md:text-5xl font-light leading-relaxed">
-    Bringing the most <br />
-    <span className="text-purple-300 font-semibold italic">
-      Wonderful Experiences
-    </span>
-    <br />
-    right to you
-  </h1>
-  <button className="px-6 py-2 text-[#874C8B] hover:text-xl hover:bg-[#E9DCEB] hover:text-[#6A3471] rounded-full transition">
-    BOOK NOW
-  </button>
-</div>
-
-
+					<div className="space-y-8">
+						<h1 className="text-4xl md:text-5xl font-light leading-relaxed">
+							Bringing the most <br />
+							<span className="text-purple-300 font-semibold italic">
+								Wonderful Experiences
+							</span>
+							<br />
+							right to you
+						</h1>
+						<button className="px-6 py-2 text-[#874C8B] hover:text-xl hover:bg-[#E9DCEB] hover:text-[#6A3471] rounded-full transition">
+							BOOK NOW
+						</button>
+					</div>
 				</div>
 			</section>
 
@@ -257,23 +253,23 @@ const HomePage = () => {
 								As seen in
 							</span>
 							<a
-								href="#"
+								href="https://www.facebook.com/profile.php?id=61576323334879"
 								className="flex items-center p-3 gap-2 text-[#874C8B] hover:text-3xl hover:shadow-lg hover:bg-[#E9DCEB] hover:text-[#6A3471] hover:rounded-2xl"
 							>
 								<i className="fab fa-facebook-f" /> Facebook
 							</a>
 							<a
-								href="#"
+								href="https://www.instagram.com/nhacoflawless_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
 								className="flex items-center p-3 gap-2 text-[#874C8B] hover:text-3xl hover:shadow-lg hover:bg-[#E9DCEB] hover:text-[#6A3471] hover:rounded-2xl"
 							>
 								<i className="fab fa-instagram" /> Instagram
 							</a>
-							<a
+							{/* <a
 								href="#"
 								className="flex items-center p-3 gap-2 text-[#874C8B] hover:text-3xl hover:shadow-lg hover:bg-[#E9DCEB] hover:text-[#6A3471] hover:rounded-2xl"
 							>
 								<i className="fab fa-tiktok" /> Tiktok
-							</a>
+							</a> */}
 						</div>
 					))}
 				</div>
@@ -291,6 +287,19 @@ const HomePage = () => {
 			{/* 3. Booking Steps */}
 			<section className="py-12 px-6 text-center">
 				<h2 className="text-3xl font-serif font-semibold tracking-wide text-[#874C8B] inline-block pb-2">
+					THE FLAWLESS
+				</h2>
+				<br />
+				<p className="px-40 text-center text-sm text-[#874C8B]">
+					''Flawless is a cutting-edge platform that bridges the gap between
+					clients and professional makeup artists. No need to visit a salon{" "}
+					<br /> Flawless brings the premium beauty experience straight to your
+					doorstep. <br /> Enjoy tailor-made makeup styles designed just for
+					you, whether you prefer an effortlessly natural look or a bold, unique
+					statement. <br /> Your beauty, your way right at home.''
+				</p>
+				<br /> <br />
+				<h2 className="text-3xl font-serif font-semibold tracking-wide text-[#874C8B] inline-block pb-6">
 					YOUR SPOT. YOUR DAY. YOUR CARE
 				</h2>
 				<div className="grid md:grid-cols-3 gap-6">
@@ -329,56 +338,64 @@ const HomePage = () => {
 				className="py-12 px-4 md:px-16 bg-gradient-to-br from-[#FCF5FA] via-[#E9D1E5] to-[#EDDFF0]"
 				// style={{ backgroundImage: `url(img/why.jpg` }}
 			>
-				<div className="text-center mb-10">
+				{/* <div className="text-center mb-10">
 					<h2 className="text-3xl font-serif font-semibold tracking-wide text-[#874C8B] inline-block pb-2">
 						WHY BOOK WITH FLAWLESS
 					</h2>
-				</div>
+				</div> */}
 
-				<div className="grid md:grid-cols-2 gap-12 items-center px-4 md:px-8 py-8">
-					{/* Left: Features Grid */}
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-[#6A3471]">
-						{/* Feature 1 */}
-						<div className="flex flex-col items-center text-center px-4">
-							<FaSearch className="text-4xl mb-3 animate-ping" />
-							<h4 className="font-bold mb-2 text-lg">Searching</h4>
-							<p className="text-sm text-[#1F2937]">
-								Fast, diverse and quality search of makeup artists on the
-								system. Public prices.
-							</p>
+				<div className="grid md:grid-cols-2 gap-12 items-center">
+					<div>
+						{/* Section Title */}
+						<div className="text-center mb-10">
+							<h2 className="text-3xl font-serif font-semibold tracking-wide text-[#874C8B] inline-block pb-5">
+								WHY BOOK WITH FLAWLESS
+							</h2>
 						</div>
+						{/* Left: Features Grid */}
 
-						{/* Feature 2 */}
-						<div className="flex flex-col items-center text-center px-4">
-							<FaClock className="text-4xl mb-3 animate-spin" />
-							<h4 className="font-bold mb-2 text-lg">Flexible Time</h4>
-							<p className="text-sm text-[#1F2937]">
-								Providing services covering all business hours, meeting the
-								needs of many customers.
-							</p>
-						</div>
+						<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-[#6A3471]">
+							{/* Feature 1 */}
+							<div className="flex flex-col items-center text-center px-4">
+								<FaSearch className="text-4xl mb-3 animate-ping" />
+								<h4 className="font-bold mb-2 text-lg">Searching</h4>
+								<p className="text-sm text-[#1F2937]">
+									Fast, diverse and quality search of makeup artists on the
+									system. Public prices.
+								</p>
+							</div>
 
-						{/* Feature 3 */}
-						<div className="flex flex-col items-center text-center px-4">
-							<FaMapMarkerAlt className="text-4xl mb-3 animate-bounce" />
-							<h4 className="font-bold mb-2 text-lg">Flexible location</h4>
-							<p className="text-sm text-[#1F2937]">
-								Available at any location within the city provided by the
-								customer.
-							</p>
-						</div>
+							{/* Feature 2 */}
+							<div className="flex flex-col items-center text-center px-4">
+								<FaClock className="text-4xl mb-3 animate-spin" />
+								<h4 className="font-bold mb-2 text-lg">Flexible Time</h4>
+								<p className="text-sm text-[#1F2937]">
+									Providing services covering all business hours, meeting the
+									needs of many customers.
+								</p>
+							</div>
 
-						{/* Feature 4 */}
-						<div className="flex flex-col items-center text-center px-4">
-							<FaShieldAlt className="text-4xl mb-3 animate-pulse" />
-							<h4 className="font-bold mb-2 text-lg">Security and Safety</h4>
-							<p className="text-sm text-[#1F2937]">
-								Secure payment, personal information security, ensuring safety
-								for customers and experts.
-							</p>
+							{/* Feature 3 */}
+							<div className="flex flex-col items-center text-center px-4">
+								<FaMapMarkerAlt className="text-4xl mb-3 animate-bounce" />
+								<h4 className="font-bold mb-2 text-lg">Flexible location</h4>
+								<p className="text-sm text-[#1F2937]">
+									Available at any location within the city provided by the
+									customer.
+								</p>
+							</div>
+
+							{/* Feature 4 */}
+							<div className="flex flex-col items-center text-center px-4">
+								<FaShieldAlt className="text-4xl mb-3 animate-pulse" />
+								<h4 className="font-bold mb-2 text-lg">Security and Safety</h4>
+								<p className="text-sm text-[#1F2937]">
+									Secure payment, personal information security, ensuring safety
+									for customers and experts.
+								</p>
+							</div>
 						</div>
 					</div>
-
 					{/* Right: Image */}
 					<div className="flex justify-center">
 						<img
@@ -469,8 +486,8 @@ const HomePage = () => {
 					className="overflow-hidden py-6 bg-[#FCF5FA]"
 					// style={{ backgroundImage: `url(img/bg-why.webp)` }}
 				>
-<style>
-  {`
+					<style>
+						{`
     @keyframes scroll-x {
       0% {
         transform: translateX(0%);
@@ -488,27 +505,45 @@ const HomePage = () => {
       animation-play-state: paused;
     }
   `}
-</style>
+					</style>
 
-<div className="relative overflow-hidden">
-  <div className="flex gap-6 animate-scroll-x whitespace-nowrap w-max">
-    {["kol1", "kol2", "kol3", "kol4", "kol5", "kol6", "kol7", "kol8", "kol9", "kol10", "kol1", "kol2", "kol3", "kol4", "kol5", "kol6", "kol7", "kol8", "kol9", "kol10"].map(
-      (img, i) => (
-        <div
-          key={i}
-          className="h-64 w-40 flex-shrink-0 rounded-md overflow-hidden shadow-md bg-white"
-        >
-          <img
-            src={`/img/${img}.jpg`}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-      )
-    )}
-  </div>
-</div>
-
+					<div className="relative overflow-hidden">
+						<div className="flex gap-6 animate-scroll-x whitespace-nowrap w-max">
+							{[
+								"kol1",
+								"kol2",
+								"kol3",
+								"kol4",
+								"kol5",
+								"kol6",
+								"kol7",
+								"kol8",
+								"kol9",
+								"kol10",
+								"kol1",
+								"kol2",
+								"kol3",
+								"kol4",
+								"kol5",
+								"kol6",
+								"kol7",
+								"kol8",
+								"kol9",
+								"kol10",
+							].map((img, i) => (
+								<div
+									key={i}
+									className="h-64 w-40 flex-shrink-0 rounded-md overflow-hidden shadow-md bg-white"
+								>
+									<img
+										src={`/img/${img}.jpg`}
+										alt=""
+										className="w-full h-full object-cover"
+									/>
+								</div>
+							))}
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -588,11 +623,7 @@ const HomePage = () => {
 					{/* Payment Methods */}
 					<div className="flex flex-wrap items-center gap-4 text-orange-800">
 						<img src="/img/visa.jpg" alt="Visa" className="h-6" />
-						<img
-							src="/img/applepay.png"
-							alt="Apple Pay"
-							className="h-6"
-						/>
+						<img src="/img/applepay.png" alt="Apple Pay" className="h-6" />
 						<img src="/img/momowebp.webp" alt="Momo" className="h-6" />
 						<img src="/img/vnpay.jpg" alt="VnPay" className="h-6" />
 						<p className="text-xs italic text-[#6A3471]">#GOFLAWLESS</p>

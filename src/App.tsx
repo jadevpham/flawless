@@ -82,8 +82,8 @@ function AppInner() {
 						{/* ChatBox luôn cố định */}
 						<div style={{
 				position: 'fixed',
-				bottom: '20px',
-				right: '20px',
+				bottom: '200px',
+				right: '200px',
 				zIndex: 9999,
 				width: '300px',
 				maxHeight: '400px',

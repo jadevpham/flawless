@@ -9,6 +9,26 @@ export const fetchTotalBooking = createAsyncThunk(
   }
 );
 
+// export const fetchTotalBooking = createAsyncThunk(
+//   "booking/fetchTotalBooking",
+//   async () => {
+//     const res = await fetch("https://flawless-a2exc2hwcge8bbfz.southeastasia-01.azurewebsites.net/api/Dashboard/total-booking");
+//     if (!res.ok) throw new Error("Failed to fetch totalBooking");
+
+//     const raw = await res.json();
+
+//     return {
+//       totalBooking: {
+//         totalBookingAllYear: raw.totalBookingAllYear,
+//         perYear: raw.perYear,
+//       },
+//       isSuccess: raw.isSuccess,
+//       errorMessage: raw.errorMessage,
+//     };
+//   }
+// );
+
+
 const bookingSlice = createSlice({
   name: "booking",
   initialState: {

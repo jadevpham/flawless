@@ -26,10 +26,10 @@ setAuth(res.jwtToken, res.refreshToken, res.user, res.user?.role);
       toast.success(`Đăng nhập thành công. Xin chào, ${res.name || "bạn"}!`);
 
       // Điều hướng theo role
-      // const role = res.role?.toLowerCase();
+      const role = res.role?.toLowerCase();
       // Vì BE set admin không có 2FA nên tạm thời lấy role của currentUser để phân quyền đăng nhặp
 	// Theo logic đúng phải là role của authStore
-	const role = store.getState().auth.currentUser?.role;
+	// const role = store.getState().auth.currentUser?.role;
   // lúc mới đăng nhập thì dùng role authStore api be thật phân quyền chứ không phải role của currentUser api be giả lập json-server
       if (role === "artist") {
         navigate("/artists");

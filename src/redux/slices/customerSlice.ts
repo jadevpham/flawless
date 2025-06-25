@@ -9,6 +9,26 @@ export const fetchTotalCustomer = createAsyncThunk(
   }
 );
 
+// sửa cho khớp api BE trả về 
+// export const fetchTotalCustomer = createAsyncThunk(
+//   "customer/fetchTotalCustomer",
+//   async () => {
+//     const res = await fetch("https://flawless-a2exc2hwcge8bbfz.southeastasia-01.azurewebsites.net/api/Dashboard/get-total-customer");
+//     if (!res.ok) throw new Error("Failed to fetch totalCustomer.json");
+
+//     const raw = await res.json();
+
+//     return {
+//       totalCustomer: {
+//         totalCustomerAllYear: raw.totalCustomerAllYear,
+//         perYear: raw.perYear,
+//       },
+//       isSuccess: raw.isSuccess,
+//       errorMessage: raw.errorMessage,
+//     };
+//   }
+// );
+
 const customerSlice = createSlice({
   name: "customer",
   initialState: {

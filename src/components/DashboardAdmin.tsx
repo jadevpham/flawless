@@ -93,7 +93,7 @@ export default function DashboardAdmin() {
 				netProfit: selectedYearDataRevenue.netProfit[monthKey],
 		  }))
 		: [];
-	const bestIncome = selectedYearDataRevenue?.bestIcome ?? {
+	const bestIncome = selectedYearDataRevenue?.bestIncome ?? {
 		month: "",
 		income: 0,
 	};
@@ -105,7 +105,7 @@ export default function DashboardAdmin() {
 		month: "",
 		netProfit: 0,
 	};
-	const incomeYear = selectedYearDataRevenue?.totalIcomePerYear || 0;
+	const incomeYear = selectedYearDataRevenue?.totalIncomePerYear || 0;
 	const refundYear = selectedYearDataRevenue?.totalRefundPerYear || 0;
 	const profitYear = selectedYearDataRevenue?.totalNetProfitPerYear || 0;
 
@@ -117,7 +117,7 @@ export default function DashboardAdmin() {
 	useEffect(() => {
 		dispatch(fetchTotalBooking());
 	}, [dispatch]);
-	const [yearBooking, setYearBooking] = useState("2023");
+	const [yearBooking, setYearBooking] = useState("2025");
 	const selectedYearDataBooking = dataBooking?.totalBooking?.perYear.find(
 		(y: { year: number }) => y.year === Number(yearBooking),
 	);
@@ -147,7 +147,7 @@ export default function DashboardAdmin() {
 		currentMonthBestArtist,
 	);
 	const bestArtistRaw: bestArtistInMonth[] =
-		dataBestArtist?.bestArist?.find(
+		dataBestArtist?.bestArtist?.find(
 			(y: { year: number }) => y.year === Number(yearBestArtist),
 		)?.months[monthBestArtist] ?? [];
 	const [sortBy, setSortBy] = useState<
@@ -275,9 +275,9 @@ export default function DashboardAdmin() {
 							className="p-4 rounded-2xl shadow-lg bg-gradient-to-r from-pink-100 to-red-100 text-gray-800 flex items-center gap-4 hover:shadow-2xl hover:scale-105 hover:cursor-pointer hover:text-orange-900 hover:shadow-red-300 hover:bg-gradient-to-r hover:from-pink-200 hover:to-red-200 hover:border-2 hover:border-red-300 hover:border-solid transition-shadow duration-300"
 							title="Earnings"
 							value={
-								dataRevenue?.totalRevenue?.totalIcomeAllYear
+								dataRevenue?.totalRevenue?.totalIncomeAllYear
 									? formatCurrencyVND(
-											dataRevenue?.totalRevenue?.totalIcomeAllYear,
+											dataRevenue?.totalRevenue?.totalIncomeAllYear,
 									  )
 									: "Loading..."
 							}
@@ -590,7 +590,7 @@ export default function DashboardAdmin() {
 									onChange={(e) => setYearBestArtist(e.target.value)}
 									className="text-sm px-2 py-1 rounded-xl bg-gradient-to-r from-green-50 to-emerald-50"
 								>
-									{dataBestArtist?.bestArist?.map((item: { year: number }) => (
+									{dataBestArtist?.bestArtist?.map((item: { year: number }) => (
 										<option key={item.year} value={item.year}>
 											{item.year}
 										</option>

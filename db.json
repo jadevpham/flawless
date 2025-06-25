@@ -35,6 +35,20 @@
           "description": "nomal day",
           "status": 0,
           "id": "SVC-ART-001-002"
+        },
+        {
+          "name": "make up anime",
+          "price": 1000,
+          "description": "abc",
+          "status": 0,
+          "id": "SVC-ART-001-003"
+        },
+        {
+          "name": "make up cô dâu",
+          "price": 200000,
+          "description": "abc2",
+          "status": 1,
+          "id": "SVC-ART-001-004"
         }
       ],
       "certificateImg": [
@@ -57,7 +71,7 @@
             "address": "66 Đường Dương Bá Trạc, P.1, Q.8, TP.HCM"
           },
           "service": "Bridal Makeup",
-          "date": "2025-05-26",
+          "date": "2025-06-26",
           "time": "05:30 PM",
           "duration": "133 minutes",
           "status": 0
@@ -73,7 +87,7 @@
             "address": "Da Nang"
           },
           "service": "Party Makeup",
-          "date": "2025-05-27",
+          "date": "2025-06-27",
           "time": "11:45 AM",
           "duration": "134 minutes",
           "status": 2
@@ -89,7 +103,7 @@
             "address": "Hanoi"
           },
           "service": "Photoshoot Makeup",
-          "date": "2025-06-10",
+          "date": "2025-06-16",
           "time": "09:15 PM",
           "duration": "126 minutes",
           "status": 2
@@ -105,7 +119,7 @@
             "address": "Da Nang"
           },
           "service": "Photoshoot Makeup",
-          "date": "2025-06-12",
+          "date": "2025-06-18",
           "time": "8:40 AM",
           "duration": "109 minutes",
           "status": 2
@@ -121,9 +135,9 @@
             "address": "Ho Chi Minh City"
           },
           "service": "Party Makeup",
-          "date": "2025-06-12",
-          "time": "2:00 PM",
-          "duration": "129 minutes",
+          "date": "2025-06-29",
+          "time": "6:32 AM",
+          "duration": "60",
           "status": 1
         },
         {
@@ -137,7 +151,7 @@
             "address": "Hai Phong"
           },
           "service": "Bridal Makeup",
-          "date": "2025-06-02",
+          "date": "2025-06-24",
           "time": "08:30 AM",
           "duration": "45 minutes",
           "status": 1
@@ -153,7 +167,7 @@
             "address": "Hai Phong"
           },
           "service": "Bridal Makeup",
-          "date": "2025-06-03",
+          "date": "2025-06-27",
           "time": "05:30 PM",
           "duration": "30 minutes",
           "status": 0
@@ -169,7 +183,7 @@
             "address": "Hai Phong"
           },
           "service": "Bridal Makeup",
-          "date": "2025-06-06",
+          "date": "2025-07-01",
           "time": "7:53 AM",
           "duration": "60 minutes",
           "status": 0
@@ -185,7 +199,7 @@
             "address": "Hai Phong"
           },
           "service": "Bridal Makeup",
-          "date": "2025-06-08",
+          "date": "2025-07-03",
           "time": "9:15 AM",
           "duration": "60 minutes",
           "status": 0
@@ -201,7 +215,7 @@
             "address": "Hai Phong"
           },
           "service": "Bridal Makeup",
-          "date": "2025-06-06",
+          "date": "2025-07-06",
           "time": "10:00 AM",
           "duration": "60 minutes",
           "status": 0
@@ -217,7 +231,7 @@
             "address": "Hai Phong"
           },
           "service": "Bridal Makeup",
-          "date": "2025-06-05",
+          "date": "2025-07-05",
           "time": "9:00 AM",
           "duration": "90",
           "status": 0
@@ -233,7 +247,7 @@
             "address": "Hai Phong"
           },
           "service": "Bridal Makeup",
-          "date": "2025-06-04",
+          "date": "2025-06-28",
           "time": "9:54 AM",
           "duration": "60 minutes",
           "status": 0
@@ -249,7 +263,7 @@
             "address": ""
           },
           "service": "",
-          "date": "2025-06-04",
+          "date": "2025-07-05",
           "time": "7:23 AM",
           "duration": "38",
           "status": 2
@@ -265,8 +279,24 @@
             "address": ""
           },
           "service": "",
-          "date": "2025-06-11",
-          "time": "6:38 AM",
+          "date": "2025-06-10",
+          "time": "7:04 AM",
+          "duration": "53",
+          "status": 2
+        },
+        {
+          "id": "SCH-ART-001-6",
+          "customer": {
+            "id": "",
+            "name": "",
+            "avatar": "",
+            "phone": "",
+            "note": "",
+            "address": ""
+          },
+          "service": "",
+          "date": "2025-06-14",
+          "time": "6:30 AM",
           "duration": "45",
           "status": 2
         }
@@ -287,7 +317,7 @@
       "avatar": "https://randomuser.me/api/portraits/women/13.jpg",
       "role": "Junior Makeup Artist",
       "specialty": "Bridal Makeup",
-      "status": 1,
+      "status": 0,
       "gender": 0,
       "phone": "0920216118",
       "email": "emma.lopez@beautypro.com",
@@ -652,7 +682,7 @@
       "avatar": "https://randomuser.me/api/portraits/women/14.jpg",
       "role": "Senior Makeup Artist",
       "specialty": "Everyday Glam",
-      "status": 1,
+      "status": 0,
       "gender": 0,
       "phone": "0952571441",
       "email": "harper.jones@beautypro.com",
@@ -796,7 +826,7 @@
       "avatar": "https://randomuser.me/api/portraits/women/37.jpg",
       "role": "Senior Makeup Artist",
       "specialty": "Everyday Glam",
-      "status": 1,
+      "status": 0,
       "gender": 0,
       "phone": "0969034033",
       "email": "emma.wilson@beautypro.com",
@@ -927,7 +957,7 @@
       "avatar": "https://randomuser.me/api/portraits/women/66.jpg",
       "role": "Senior Makeup Artist",
       "specialty": "Runway Makeup",
-      "status": 1,
+      "status": 2,
       "gender": 0,
       "phone": "0995102987",
       "email": "isabella.williams@beautypro.com",

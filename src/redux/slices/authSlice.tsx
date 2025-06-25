@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface CurrentUser {
-	role: "admin" | "artist" | "customer";
+	role: "admin" | "artist" | "customer" | "guest";
 	artistId?: string;
 	userId: string | number;
 	username: string;
