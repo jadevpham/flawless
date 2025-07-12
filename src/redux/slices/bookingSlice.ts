@@ -1,32 +1,36 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchTotalBooking = createAsyncThunk(
-  "booking/fetchTotalBooking",
-  async () => {
-    const res = await fetch("/api/totalBooking.json");
-    if (!res.ok) throw new Error("Failed to fetch totalBooking.json");
-    return await res.json();
-  }
-);
-
 // export const fetchTotalBooking = createAsyncThunk(
 //   "booking/fetchTotalBooking",
 //   async () => {
-//     const res = await fetch("https://flawless-a2exc2hwcge8bbfz.southeastasia-01.azurewebsites.net/api/Dashboard/total-booking");
-//     if (!res.ok) throw new Error("Failed to fetch totalBooking");
-
-//     const raw = await res.json();
-
-//     return {
-//       totalBooking: {
-//         totalBookingAllYear: raw.totalBookingAllYear,
-//         perYear: raw.perYear,
-//       },
-//       isSuccess: raw.isSuccess,
-//       errorMessage: raw.errorMessage,
-//     };
+//     const res = await fetch("/api/totalBooking.json");
+//     if (!res.ok) throw new Error("Failed to fetch totalBooking.json");
+//     return await res.json();
 //   }
 // );
+
+export const fetchTotalBooking = createAsyncThunk(
+  "booking/fetchTotalBooking",
+  async () => {
+    const token = localStorage.getItem("accessToken");
+    const headers: Record<string, string> = token ? { Authorization: `Bearer ${token}` } : {};
+    const res = await fetch("https://flawless-a2exc2hwcge8bbfz.southeastasia-01.azurewebsites.net/api/Dashboard/total-booking", {
+      headers,
+    });
+    if (!res.ok) throw new Error("Failed to fetch totalBooking");
+
+    const raw = await res.json();
+
+    return {
+      totalBooking: {
+        totalBookingAllYear: raw.totalBookingAllYear,
+        perYear: raw.perYear,
+      },
+      isSuccess: raw.isSuccess,
+      errorMessage: raw.errorMessage,
+    };
+  }
+);
 
 
 const bookingSlice = createSlice({

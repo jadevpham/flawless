@@ -2,20 +2,23 @@ import { format, parse } from "date-fns";
 import StatusActionButton from "./StatusActionButton";
 
 interface Transaction {
+  id: string;                        // 👈 thêm mới
   amound: number;
   type: number;
   status: number;
   paymentMethod: string;
+  paymentProviderTxnId: string;       // 👈 thêm mới
   createAt: {
     date: string;
     time: string;
   };
 }
 
+
 interface PaymentTableRowProps {
   id: string; // appointment id
   nameCus: string;
-  avatarCus: string;
+  avatarCus: string | null;
   date: string;
   time: string;
   nameAr: string;
@@ -23,6 +26,7 @@ interface PaymentTableRowProps {
   transaction: Transaction;
   transactionIndex: number;
   onStatusUpdated: () => void;
+  onTransactionAction: (transactionId: string, transactionType: number, transactionCode: string) => void;
 }
 
 export default function PaymentTableRow({
@@ -36,6 +40,7 @@ export default function PaymentTableRow({
   transaction,
   transactionIndex,
   onStatusUpdated,
+  onTransactionAction,
 }: PaymentTableRowProps) {
   return (
     <tr className="border-b hover:bg-gray-50">
@@ -83,8 +88,13 @@ export default function PaymentTableRow({
         id={id}
         transactionIndex={transactionIndex}
         status={transaction.status}
+        transactionId={transaction.id}
+        transactionType={transaction.type}
+        transactionCode={transaction.paymentProviderTxnId && transaction.paymentProviderTxnId.trim() !== "" ? transaction.paymentProviderTxnId : `TXN-${Date.now()}`}
         onStatusUpdated={onStatusUpdated}
+        onTransactionAction={onTransactionAction}
       />
+
     </tr>
   );
 }

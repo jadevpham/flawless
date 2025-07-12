@@ -12,6 +12,7 @@ const GoogleLoginButton = () => {
   const handleSuccess = async (response: any) => {
     try {
       const token = response.credential; // Token Google
+      console.log("token", token);
       const res = await authService.googleSignIn(token); // Gửi token tới BE
 
       if (!res?.isSuccess || !res.jwtToken || !res.user) {

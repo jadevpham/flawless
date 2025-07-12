@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../redux/store";
 import PaymentTableRow from "./PaymentTableRow";
 import Pagination from "./Pagination";
-import { fetchTotalAppointment } from "@/redux/slices/appointmentSlice";
+import { confirmRefund, fetchTotalAppointment, payOutArtist } from "@/redux/slices/appointmentSlice";
 import { setTransactionStatusFilter } from "../redux/slices/searchSlice";
 
 export default function CustomerTable() {
@@ -65,6 +65,14 @@ export default function CustomerTable() {
 	const transactionStatusFilter = useSelector(
 		(state: RootState) => state.search.transactionStatusFilter,
 	);
+	const handleTransactionAction = (transactionId: string, transactionType: number, transactionCode: string) => {
+		if (transactionType === 1) {
+			dispatch(confirmRefund({ transactionId, transactionCode })).then(() => dispatch(fetchTotalAppointment()));
+		} else if (transactionType === 2) {
+			dispatch(payOutArtist({ transactionId, transactionCode })).then(() => dispatch(fetchTotalAppointment()));
+		}
+	};
+	  
 	return (
 		<>
 			<div className="flex justify-end mb-4 gap-4">
@@ -136,6 +144,7 @@ export default function CustomerTable() {
 											transaction={t}
 											transactionIndex={index}
 											onStatusUpdated={handleReload}
+											onTransactionAction={handleTransactionAction}
 										/>
 									)),
 							)

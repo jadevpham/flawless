@@ -7,7 +7,7 @@ export interface Review {
   customer: {
     idCu: string;
     nameCu: string;
-    avatar: string;
+    avatar: string | null;
   };
   artist: {
     idAr: string;
@@ -31,10 +31,47 @@ const initialState: ReviewState = {
   error: null,
 };
 
-export const fetchTotalReview = createAsyncThunk("review/fetchTotalReview", async () => {
-  const response = await axios.get("/api/totalReview.json");
-  return response.data.totalReview as Review[];
-});
+// export const fetchTotalReview = createAsyncThunk("review/fetchTotalReview", async () => {
+//   const response = await axios.get("/api/totalReview.json");
+//   return response.data.totalReview as Review[];
+// });
+export const fetchTotalReview = createAsyncThunk<Review[]>(
+  "review/fetchTotalReview",
+  async () => {
+    const token = localStorage.getItem("accessToken");
+    const headers: Record<string, string> = token ? { Authorization: `Bearer ${token}` } : {};
+
+    const res = await axios.get(
+      "https://flawless-a2exc2hwcge8bbfz.canadacentral-01.azurewebsites.net/api/feedback/get-list-feedback",
+      { headers }
+    );
+
+    if (!res.data || !res.data.feedbacks) {
+      throw new Error("Failed to fetch totalReview");
+    }
+
+    // Trả về đúng kiểu Review[]
+    const mapped: Review[] = res.data.feedbacks.map((item: any) => ({
+      id: item.id,
+      customer: {
+        idCu: item.customer?.id || "",
+        nameCu: item.customer?.name || "Unknown",
+        avatar: item.customer?.imageUrl || null,
+      },
+      artist: {
+        idAr: item.artist?.id || "",
+        nameAr: item.artist?.name || "Unknown",
+      },
+      service: "Service", // Tạm thời hard-code
+      message: item.content || "",
+      rating: item.rating,
+      datetime: "",  // Tạm thời
+    }));
+
+    return mapped;
+  }
+);
+
 
 const reviewSlice = createSlice({
   name: "review",

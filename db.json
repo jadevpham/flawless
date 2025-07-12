@@ -49,6 +49,13 @@
           "description": "abc2",
           "status": 1,
           "id": "SVC-ART-001-004"
+        },
+        {
+          "name": "make up 2",
+          "price": 200000,
+          "description": "abc",
+          "status": 1,
+          "id": "SVC-ART-001-005"
         }
       ],
       "certificateImg": [
@@ -136,8 +143,8 @@
           },
           "service": "Party Makeup",
           "date": "2025-06-29",
-          "time": "6:32 AM",
-          "duration": "60",
+          "time": "7:48 AM",
+          "duration": "83",
           "status": 1
         },
         {
@@ -151,8 +158,8 @@
             "address": "Hai Phong"
           },
           "service": "Bridal Makeup",
-          "date": "2025-06-24",
-          "time": "08:30 AM",
+          "date": "2025-06-26",
+          "time": "7:53 AM",
           "duration": "45 minutes",
           "status": 1
         },
@@ -317,7 +324,7 @@
       "avatar": "https://randomuser.me/api/portraits/women/13.jpg",
       "role": "Junior Makeup Artist",
       "specialty": "Bridal Makeup",
-      "status": 0,
+      "status": 1,
       "gender": 0,
       "phone": "0920216118",
       "email": "emma.lopez@beautypro.com",
