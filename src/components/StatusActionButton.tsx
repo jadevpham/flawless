@@ -133,9 +133,12 @@ export default function StatusActionButton({
 
 		if (!confirmResult.isConfirmed) return;
 		onTransactionAction(transactionId, transactionType, transactionCode);
+		console.log("🟡 Triggering transaction action with props:", transactionId, transactionType, transactionCode);
+
 	};
 
 	// Render buttons
+	if (transactionType === 1 || transactionType === 2) {
 	if (status === 0) {
 		return (
 			<td className="py-3 px-4">
@@ -161,6 +164,6 @@ export default function StatusActionButton({
 			</td>
 		);
 	}
-
+	}
 	return <td className="py-3 px-4"></td>;
 }

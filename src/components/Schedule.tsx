@@ -6,7 +6,7 @@ import type { AppDispatch, RootState } from "../redux/store";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import DraggableScheduleItem_Rnd from "./DraggableScheduleItem";
-import { addScheduleItemToArtistAPI } from "../redux/slices/artistListSlice";
+import { addScheduleItemToArtistAPI, fetchArtistList } from "../redux/slices/artistListSlice";
 import TrashArea from "./TrashArea";
 
 function timeToMinutes(timeStr: string): number {
@@ -65,26 +65,22 @@ const getWeekDays = (weekOffset = 0) => {
 };
 const Schedule = () => {
 	const trashRef = useRef<HTMLDivElement>(null);
+	const dispatch = useDispatch<AppDispatch>();
 
 	const { id } = useParams<{ id: string }>();
 	const artistList = useSelector(
 		(state: RootState) => state.artistList.artistList,
 	);
+	const loading = useSelector((state: RootState) => state.artistList.loading);
+	
+	// Fetch artistList từ BE khi component mount
+	useEffect(() => {
+		dispatch(fetchArtistList());
+	}, [dispatch]);
+
 	const artist = artistList.find((a) => a.id === id);
 
-	if (!artist) {
-		return (
-			<p className="text-sm text-gray-500">
-				Artist not found or data not loaded.
-			</p>
-		);
-	}
-	// Kiểm tra đã có dữ liệu trong biến artist chưa
-	// console.log("artist:", artist);
-	const schedule = artist?.schedule;
-	//Kiểm tra đã có dữ liệu trong biến schedule chưa
-	// console.log("schedule:", schedule);
-
+	// All hooks must be called before any early returns
 	const [weekOffset, setWeekOffset] = useState(0);
 	const days = getWeekDays(weekOffset);
 	const currentTime = new Date();
@@ -93,20 +89,8 @@ const Schedule = () => {
 	const getRingColor = (type: number) => {
 		return type === 0 ? "hover:ring-green-400" : "hover:ring-red-400";
 	};
-	``;
-	// Kiểm tra dữ liệu của trường date trong mảng schedule
-	// console.log(
-	// 	"schedule date values:",
-	// 	schedule.map((a) => a.date),
-	// );
-	// Kiểm tra dữ liệu của trường value trong mảng getWeekDays
-	// console.log(
-	// 	"week view values:",
-	// 	days.map((d) => d.value),
-	// );
 
 	const [open, setOpen] = useState(false);
-
 	const columnRef = useRef<HTMLDivElement>(null);
 	const [columnWidth, setColumnWidth] = useState<number>(148); // mặc định 148px
 
@@ -126,7 +110,40 @@ const Schedule = () => {
 		};
 	}, [days]);
 
-	const dispatch = useDispatch<AppDispatch>();
+	const currentUser = useSelector((state: RootState) => state.auth.currentUser);
+	const isEditable = currentUser?.role === "artist";
+	const [isOverTrash, setIsOverTrash] = useState(false);
+
+	// Early returns after all hooks
+	if (loading) {
+		return <div className="text-center py-8">Loading artist data...</div>;
+	}
+
+	if (!artist) {
+		return (
+			<p className="text-sm text-gray-500">
+				Artist not found or data not loaded.
+			</p>
+		);
+	}
+
+	// Kiểm tra đã có dữ liệu trong biến artist chưa
+	// console.log("artist:", artist);
+	const schedule = artist?.schedule;
+	//Kiểm tra đã có dữ liệu trong biến schedule chưa
+	// console.log("schedule:", schedule);
+
+	// Kiểm tra dữ liệu của trường date trong mảng schedule
+	// console.log(
+	// 	"schedule date values:",
+	// 	schedule.map((a) => a.date),
+	// );
+	// Kiểm tra dữ liệu của trường value trong mảng getWeekDays
+	// console.log(
+	// 	"week view values:",
+	// 	days.map((d) => d.value),
+	// );
+
 	const handleAddScheduleItem = () => {
 		const busyCount = artist.schedule.filter(
 			(item) => item.status === 2,
@@ -156,9 +173,6 @@ const Schedule = () => {
 			}),
 		);
 	};
-	const currentUser = useSelector((state: RootState) => state.auth.currentUser);
-	const isEditable = currentUser?.role === "artist";
-	const [isOverTrash, setIsOverTrash] = useState(false);
 
 	return (
 		<>
@@ -194,13 +208,11 @@ const Schedule = () => {
 						>
 							Synthetic
 						</button>
-						{artist && (
-							<SyntheticDialog
-								isOpen={open}
-								onClose={() => setOpen(false)}
-								artist={artist}
-							/>
-						)}
+						<SyntheticDialog
+							isOpen={open && !!artist}
+							onClose={() => setOpen(false)}
+							artist={artist || { id: '', nameArtist: '', specialty: '', schedule: [], totalBooked: 0, totalCustomer: 0, totalCancel: 0 }}
+						/>
 					</div>
 				</div>
 				{/* Header row */}

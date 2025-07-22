@@ -15,7 +15,7 @@ export const fetchBestService = createAsyncThunk(
 		const token = localStorage.getItem("accessToken");
 		const headers: Record<string, string> = token ? { Authorization: `Bearer ${token}` } : {};
 		const res = await fetch(
-			"https://flawless-a2exc2hwcge8bbfz.southeastasia-01.azurewebsites.net/api/Dashboard/get-best-service",
+			"https://flawless-a2exc2hwcge8bbfz.canadacentral-01.azurewebsites.net/api/Dashboard/get-best-service",
 			{
 				headers,
 			}

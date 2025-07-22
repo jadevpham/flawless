@@ -22,7 +22,7 @@ export const fetchCustomerList = createAsyncThunk(
 	async () => {
 		const token = localStorage.getItem("accessToken");
 		const res = await axios.get(
-			"https://flawless-a2exc2hwcge8bbfz.southeastasia-01.azurewebsites.net/api/UserProgress/get-information-customer",
+			"https://flawless-a2exc2hwcge8bbfz.canadacentral-01.azurewebsites.net/api/UserProgress/get-information-customer",
 			{
 				headers: token ? { Authorization: `Bearer ${token}` } : {},
 			}

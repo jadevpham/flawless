@@ -114,7 +114,7 @@
 // export default totalAppointmentSlice.reducer;
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
+import qs from "qs"; 
 export interface Transaction {
   id: string;
   amound: number;
@@ -219,47 +219,74 @@ export const fetchTotalAppointment = createAsyncThunk<Appointment[]>(
 
 export const confirmRefund = createAsyncThunk(
   "appointment/confirmRefund",
-  async ({ transactionId, transactionCode }: { transactionId: string; transactionCode: string }) => {
+  async ({ transactionId, transactionCode }: { transactionId: string; transactionCode?: string }) => {
     const token = localStorage.getItem("accessToken");
-    const headers = {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
+
+    const code = transactionCode?.trim() !== "" ? transactionCode : `TXN-${Date.now()}`;
+    const body = {
+      TransactionId: transactionId,
+      TransactionCode: code,
     };
 
-    const code = transactionCode && transactionCode.trim() !== "" ? transactionCode : `TXN-${Date.now()}`;
-    const body = { TransactionId: transactionId, TransactionCode: code };
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/x-www-form-urlencoded', // 👈 gửi đúng kiểu backend yêu cầu
+    };
 
-    const res = await axios.post(
-      "https://flawless-a2exc2hwcge8bbfz.canadacentral-01.azurewebsites.net/api/Transaction/confirm-refund",
-      body,
-      { headers }
-    );
+    console.log("📦 Sending refund body (form-encoded):", body);
 
-    return res.data;
+    try {
+      const res = await axios.post(
+        "https://flawless-a2exc2hwcge8bbfz.canadacentral-01.azurewebsites.net/api/Transaction/confirm-refund",
+        qs.stringify(body),
+        { headers }
+      );
+
+      console.log("✅ Refund confirmed:", res.data);
+      return res.data;
+    } catch (error: any) {
+      console.error("❌ Refund confirm error:", error.response?.data || error.message);
+      throw error;
+    }
   }
 );
 
 export const payOutArtist = createAsyncThunk(
   "appointment/payOutArtist",
-  async ({ transactionId, transactionCode }: { transactionId: string; transactionCode: string }) => {
+  async ({ transactionId, transactionCode }: { transactionId: string; transactionCode?: string }) => {
     const token = localStorage.getItem("accessToken");
-    const headers = {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
+
+    const code = transactionCode?.trim() !== "" ? transactionCode : `TXN-${Date.now()}`;
+
+    const body = {
+      TransactionId: transactionId,     // ✅ PascalCase
+      TransactionCode: code             // ✅ PascalCase
     };
 
-    const code = transactionCode && transactionCode.trim() !== "" ? transactionCode : `TXN-${Date.now()}`;
-    const body = { TransactionId: transactionId, TransactionCode: code };
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/x-www-form-urlencoded', // ✅ gửi đúng kiểu backend yêu cầu
+    };
 
-    const res = await axios.post(
-      "https://flawless-a2exc2hwcge8bbfz.canadacentral-01.azurewebsites.net/api/Transaction/pay-out-artist",
-      body,
-      { headers }
-    );
+    console.log("📦 Sending body (form-encoded):", body);
 
-    return res.data;
+    try {
+      const res = await axios.post(
+        "https://flawless-a2exc2hwcge8bbfz.canadacentral-01.azurewebsites.net/api/Transaction/pay-out-artist",
+        qs.stringify(body), // ✅ chuyển object thành form-urlencoded string
+        { headers }
+      );
+
+      console.log("✅ Response from payout:", res.data);
+      return res.data;
+    } catch (error: any) {
+      console.error("❌ Axios Error (form):", error.response?.data || error.message);
+      throw error;
+    }
   }
 );
+
+
 
 function mapStatus(status: string): number {
   switch (status) {

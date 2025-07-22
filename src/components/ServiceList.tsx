@@ -7,6 +7,7 @@ import {
 	addServiceToArtistAPI,
 	updateServiceOfArtistAPI,
 	fetchArtistList,
+	fetchServiceListAPI,
 } from "@/redux/slices/artistListSlice";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
@@ -102,6 +103,11 @@ export default function ArtistList() {
 	});
 	const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 	const handleSaveService = () => {
+	// Validate dropdown
+	if (!isEditMode && !selectedServiceId) {
+		alert("Please choose a service");
+		return;
+	}
 		const myArtist = dataArtistList.find((a) => a.id === currentUser?.artistId);
 		if (!myArtist) return;
 
@@ -118,18 +124,18 @@ export default function ArtistList() {
 			);
 		} else {
 			// Create new Service → tự gen ID
-			const nextNumber = myArtist.services.length + 1;
-			const newServiceId = `SVC-${myArtist.id}-${String(nextNumber).padStart(
-				3,
-				"0",
-			)}`;
+			// const nextNumber = myArtist.services.length + 1;
+			// const newServiceId = `SVC-${myArtist.id}-${String(nextNumber).padStart(
+			// 	3,
+			// 	"0",
+			// )}`;
 
 			dispatch(
 				addServiceToArtistAPI({
 					id: myArtist.id,
 					service: {
 						...newServiceData,
-						id: newServiceId,
+						id: selectedServiceId,
 					},
 				}),
 			);
@@ -145,7 +151,18 @@ export default function ArtistList() {
 			status: 1,
 		});
 	};
+// get service
+useEffect(() => {
+	if (isModalOpen && !isEditMode) {
+		dispatch(fetchServiceListAPI({}));
+	}
+}, [isModalOpen, isEditMode, dispatch]);
 
+  const [selectedServiceId, setSelectedServiceId] = useState("");
+// const dispatch = useDispatch();
+const serviceList = useSelector((state: any) => state.artistList.serviceList || []);
+  
+console.log("serviceList:", serviceList);
 	return (
 		<>
 			{/* Hiển thị nút Create Service trên đầu nếu role === artist */}
@@ -164,7 +181,7 @@ export default function ArtistList() {
 						}}
 						className="bg-red-100 text-red-700 px-4 mx-3 py-2 rounded-full ml-2"
 					>
-						Create Service
+						Create Service Option
 					</button>
 				</div>
 			)}
@@ -248,6 +265,20 @@ export default function ArtistList() {
 									<div className="mt-4 space-y-4">
 										{/* Form content */}
 										<div className="mb-2">
+										<label className="block text-lg font-medium mb-1">Choose a Service</label>
+    <select
+      className="w-full border px-2 py-1 rounded-xl"
+      value={selectedServiceId}
+      onChange={(e) => setSelectedServiceId(e.target.value)}
+    >
+      <option value="">-- Select Service --</option>
+	  {Array.isArray(serviceList) && serviceList.map((s: any) => (
+  <option key={s.id} value={s.id}>
+    {s.name}
+  </option>
+))}
+
+    </select>
 											<label className="block text-lg font-medium mb-1">
 												Name
 											</label>

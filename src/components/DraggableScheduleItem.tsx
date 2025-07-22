@@ -325,7 +325,7 @@ const DraggableScheduleItem_Rnd: React.FC<DraggableScheduleItemProps> = ({
 				<p className="font-semibold text-gray-800 truncate">
 					{scheduleItem.status === 2
 						? "Personal Busy Time"
-						: scheduleItem.customer.name}
+						: scheduleItem.customer?.name ?? "Unknown"}
 				</p>
 				<p className="text-gray-600 text-xs truncate">
 					{scheduleItem.status === 2 ? "" : scheduleItem.service}

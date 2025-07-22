@@ -13,7 +13,7 @@ export const fetchTotalArtist = createAsyncThunk(
   async () => {
     const token = localStorage.getItem("accessToken");
     const headers: Record<string, string> = token ? { Authorization: `Bearer ${token}` } : {};
-    const res = await fetch("https://flawless-a2exc2hwcge8bbfz.southeastasia-01.azurewebsites.net/api/Dashboard/get-total-artist", {
+    const res = await fetch("https://flawless-a2exc2hwcge8bbfz.canadacentral-01.azurewebsites.net/api/Dashboard/get-total-artist", {
       headers,
     }); 
     if (!res.ok) throw new Error("Failed to fetch totalArtist");

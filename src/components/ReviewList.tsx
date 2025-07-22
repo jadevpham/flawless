@@ -80,7 +80,7 @@ export default function ReviewList() {
 						<ReviewItem
 							key={index}
 							nameCus={review.customer.nameCu}
-							avatarCus={review.customer.avatar}
+							avatarCus={review.customer.avatar || ""}
 							nameAr={review.artist.nameAr}
 							message={review.message}
 							rating={review.rating}

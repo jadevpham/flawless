@@ -1,6 +1,6 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
-const API_URL = "https://flawless-a2exc2hwcge8bbfz.southeastasia-01.azurewebsites.net/api";
+const API_URL = "https://flawless-a2exc2hwcge8bbfz.canadacentral-01.azurewebsites.net/api";
 
 type DecodedToken = {
   sub: string;
@@ -23,7 +23,7 @@ const authService = {
       formData.append("Email", email);
       formData.append("Password", password);
 
-      const response = await axios.post(`${API_URL}/UserAccount/login`, formData, {
+      const response = await axios.post(`${API_URL}/user-account/login`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -107,7 +107,7 @@ const authService = {
   },
   googleSignIn: async (googleToken: string) => {
     try {
-      const response = await axios.post(`${API_URL}/UserAccount/login-google`, {
+      const response = await axios.post(`${API_URL}/user-account/login-google`, {
         tokenId: googleToken,
       });
   

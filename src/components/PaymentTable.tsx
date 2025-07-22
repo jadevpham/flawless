@@ -6,7 +6,7 @@ import Pagination from "./Pagination";
 import { confirmRefund, fetchTotalAppointment, payOutArtist } from "@/redux/slices/appointmentSlice";
 import { setTransactionStatusFilter } from "../redux/slices/searchSlice";
 
-export default function CustomerTable() {
+export default function PaymentTable() {
 	// appointment data
 	const dispatch = useDispatch<AppDispatch>();
 	const { totalAppointment: dataAppointment } = useSelector(
@@ -20,7 +20,7 @@ export default function CustomerTable() {
 	// test đã fetch dữ liệu thành công chưa
 	useEffect(() => {
 		if (dataAppointment) {
-			console.log("Dữ liệu dataAppointment đã fetch 3001:", dataAppointment);
+			console.log("Dữ liệu dataAppointment đã fetch BE thật:", dataAppointment);
 		}
 	}, [dataAppointment]);
 
@@ -66,6 +66,7 @@ export default function CustomerTable() {
 		(state: RootState) => state.search.transactionStatusFilter,
 	);
 	const handleTransactionAction = (transactionId: string, transactionType: number, transactionCode: string) => {
+		console.log("👉 handleTransactionAction called with:", transactionId, transactionType, transactionCode);
 		if (transactionType === 1) {
 			dispatch(confirmRefund({ transactionId, transactionCode })).then(() => dispatch(fetchTotalAppointment()));
 		} else if (transactionType === 2) {

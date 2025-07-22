@@ -12,42 +12,90 @@ import { parse, format, parseISO } from "date-fns";
 interface SyntheticDialogProps {
 	isOpen: boolean;
 	onClose: () => void;
-	artist: ArtistList;
+	artist: ArtistList | null;
 }
 
+// function getScheduleInFuture(schedule: ScheduleItem[]) {
+// 	const now = new Date();
+
+// 	const withDateTime = schedule
+// 		.map((s) => {
+// 			const fullDateTime = parse(
+// 				`${s.date} ${s.time}`,
+// 				"yyyy-MM-dd hh:mm a",
+// 				new Date(),
+// 			);
+			
+// 			return {
+// 				...s,
+// 				fullDateTime,
+// 				diff: fullDateTime.getTime() - now.getTime(), // dương nếu ở tương lai
+// 			};
+// 		})
+// 		.filter((s) => s.diff > 0); // chỉ lấy lịch hẹn trong tương lai
+// 	return withDateTime;
+// }
 function getScheduleInFuture(schedule: ScheduleItem[]) {
 	const now = new Date();
-
+	console.log("Current time:", now);
+	console.log("Raw schedule data:", schedule);
+  
 	const withDateTime = schedule
-		.map((s) => {
-			const fullDateTime = parse(
-				`${s.date} ${s.time}`,
-				"yyyy-MM-dd hh:mm a",
-				new Date(),
-			);
-			return {
-				...s,
-				fullDateTime,
-				diff: fullDateTime.getTime() - now.getTime(), // dương nếu ở tương lai
-			};
-		})
-		.filter((s) => s.diff > 0); // chỉ lấy lịch hẹn trong tương lai
+	  .map((s) => {
+		console.log("Processing schedule item:", s);
+		console.log("Date:", s.date, "Time:", s.time);
+		
+		try {
+		  // Handle both 12h and 24h time formats
+		  let timeFormat = "yyyy-MM-dd HH:mm";
+		  if (s.time.includes("AM") || s.time.includes("PM")) {
+			timeFormat = "yyyy-MM-dd hh:mm a";
+		  }
+		  
+		  const fullDateTime = parse(
+			`${s.date} ${s.time}`,
+			timeFormat,
+			new Date()
+		  );
+		  console.log("Parsed datetime:", fullDateTime);
+		  
+		  if (isNaN(fullDateTime.getTime())) {
+			console.error("Invalid date parsed for:", s);
+			return null;
+		 	}
+  
+		  const diff = fullDateTime.getTime() - now.getTime();
+		  console.log("Time difference (ms):", diff);
+		  
+		  return {
+			...s,
+			fullDateTime,
+			diff,
+		  };
+		} catch (error) {
+		  console.error("Error parsing date:", error, "for item:", s);
+		  return null;
+		}
+	  })
+	  .filter((s): s is ScheduleItem & { fullDateTime: Date; diff: number } => !!s && s.diff > 0);
+  
+	console.log("Filtered future schedules:", withDateTime);
 	return withDateTime;
-}
+  }
+  
 export default function SyntheticDialog({
 	isOpen,
 	onClose,
 	artist,
 }: SyntheticDialogProps) {
-	if (!isOpen) return null;
+	console.log("artist.schedule FE:", artist?.schedule); // <-- kiểm tra field time, duration
+	const futureSchedules = getScheduleInFuture(artist?.schedule || []);
 	// Tìm lịch hẹn có thời gian gần nhất
-	const closestSchedule = getScheduleInFuture(artist.schedule).reduce(
-		(prev, current) => {
-			return current.diff < prev.diff ? current : prev;
-		},
-	);
+	const closestSchedule = futureSchedules.length > 0
+	? futureSchedules.reduce((prev, current) => (current.diff < prev.diff ? current : prev))
+	: null;
 	// Khách hàng có lịch hẹn trong tương lai gần nhất với thời điểm hiện tại
-	const closestCustomer = closestSchedule.customer;
+	const closestCustomer = closestSchedule?.customer;
 	// console.log("Closest customer:", closestCustomer);
 
 	return (
@@ -86,19 +134,19 @@ export default function SyntheticDialog({
 							<div className="grid grid-cols-3 gap-3 mb-4">
 								<div className="bg-red-50 p-3 rounded-2xl text-center">
 									<p className="text-xl font-bold text-red-700">
-										{artist.totalBooked}
+										{artist?.totalBooked || 0}
 									</p>
 									<p className="text-xs text-gray-600">Total Appointments</p>
 								</div>
 								<div className="bg-green-50 p-3 rounded-2xl text-center">
 									<p className="text-xl font-bold text-green-700">
-										{artist.totalCustomer}
+										{artist?.totalCustomer || 0}
 									</p>
 									<p className="text-xs text-gray-600">Customer</p>
 								</div>
 								<div className="bg-orange-50 p-3 rounded-2xl text-center">
 									<p className="text-xl font-bold text-orange-700">
-										{artist.totalCancel}
+										{artist?.totalCancel || 0}
 									</p>
 									<p className="text-xs text-gray-600">Cancel</p>
 								</div>
@@ -114,13 +162,13 @@ export default function SyntheticDialog({
 									{/* Customer Info */}
 									<div className="flex items-center gap-4">
 										<img
-											src={closestCustomer.avatar}
-											alt={closestCustomer.name}
+											src={closestCustomer?.avatar}
+											alt={closestCustomer?.name}
 											className="w-12 h-12 rounded-full object-cover"
 										/>
 										<div>
 											<p className="text-base font-semibold text-gray-900">
-												{closestCustomer.name}
+												{closestCustomer?.name}
 											</p>
 											{/* <p className="text-sm text-gray-500">
 												{closestCustomer.}
@@ -130,38 +178,47 @@ export default function SyntheticDialog({
 									{/* Artist Info */}
 									<div className="text-right">
 										<p className="text-base font-semibold text-gray-900">
-											{artist.nameArtist}
+											{artist?.nameArtist || 'Unknown Artist'}
 										</p>
-										<p className="text-sm text-gray-500">{artist.specialty}</p>
+										<p className="text-sm text-gray-500">{artist?.specialty || 'No specialty'}</p>
 									</div>
 								</div>
 
-								{/* Estimated Time */}
-								<div className="text-sm text-center text-gray-700 border-t pt-3 mb-6">
-									<span className="font-semibold">Est. Time: </span>
-									<span className="text-orange-700">
-										{closestSchedule.duration} - {closestSchedule.time} -{" "}
-										{format(parseISO(closestSchedule.date), "dd MMM yyyy")}
-									</span>
-								</div>
+								{!closestSchedule || !closestSchedule.customer ? (
+  <div className="text-center text-gray-500 text-sm">
+    No upcoming appointments.
+  </div>
+) : (
+  <>
+    {/* Estimated Time */}
+    <div className="text-sm text-center text-gray-700 border-t pt-3 mb-6">
+      <span className="font-semibold">Est. Time: </span>
+      <span className="text-orange-700">
+        {closestSchedule.duration} - {closestSchedule.time} -{" "}
+        {format(parseISO(closestSchedule.date), "dd MMM yyyy")}
+      </span>
+    </div>
+  </>
+)}
+
 
 								{/* Details and Notes */}
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-800">
 									<div>
 										<p className="font-semibold text-gray-600 mb-1">Phones</p>
-										<p>{closestCustomer.phone}</p>
+										<p>{closestCustomer?.phone}</p>
 
 										<p className="mt-3 font-semibold text-gray-600 mb-1">
 											Address
 										</p>
-										<p>{closestCustomer.address}</p>
+										<p>{closestCustomer?.address}</p>
 									</div>
 
 									<div>
 										<p className="font-semibold text-gray-600 mb-1">
 											Consultation Notes
 										</p>
-										<p>{closestCustomer.note}</p>
+										<p>{closestCustomer?.note}</p>
 									</div>
 								</div>
 							</div>
@@ -171,7 +228,7 @@ export default function SyntheticDialog({
 									Upcoming Appointments
 								</h1>
 								<ul className="space-y-3 text-sm">
-									{getScheduleInFuture(artist.schedule)?.map((item, i) => (
+									{getScheduleInFuture(artist?.schedule || [])?.map((item, i) => (
 										<li
 											key={i}
 											className="flex justify-between items-center border-t pt-3"
@@ -192,8 +249,8 @@ export default function SyntheticDialog({
 												</div>
 											</div>
 											<div className="text-right text-xs text-gray-500">
+												<p>{item.duration} - {item.time}</p>
 												<p>{format(parseISO(item.date), "dd MMM yyyy")}</p>
-												<p>{item.time}</p>
 											</div>
 										</li>
 									))}

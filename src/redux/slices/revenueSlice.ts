@@ -17,7 +17,7 @@ export const fetchTotalRevenue = createAsyncThunk(
     const token = localStorage.getItem("accessToken");
     const headers: Record<string, string> = token ? { Authorization: `Bearer ${token}` } : {};
     const res = await fetch(
-      "https://flawless-a2exc2hwcge8bbfz.southeastasia-01.azurewebsites.net/api/Dashboard/tota-revenue",
+      "https://flawless-a2exc2hwcge8bbfz.canadacentral-01.azurewebsites.net/api/Dashboard/tota-revenue",
       {
         headers,
       }

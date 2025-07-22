@@ -62,10 +62,18 @@ export const fetchTotalReview = createAsyncThunk<Review[]>(
         idAr: item.artist?.id || "",
         nameAr: item.artist?.name || "Unknown",
       },
-      service: "Service", // Tạm thời hard-code
+      service: item.serviceOption?.name || "Unknown Service",
       message: item.content || "",
       rating: item.rating,
-      datetime: "",  // Tạm thời
+      datetime: new Date(item.dateTime).toLocaleString("en-GB", {
+        weekday: "long",
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      }), // định dạng giống "Thursday, 09 Oct 2025, 7:33 PM"
     }));
 
     return mapped;
