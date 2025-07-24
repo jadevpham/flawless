@@ -62,7 +62,7 @@ const authService = {
   verifyTwoFactor: async (email: string, twoFactorCode: string) => {
     try {
       const response = await axios.post(
-        `${API_URL}/UserAccount/verify-twofactor-code`,
+        `${API_URL}/user-account/verify-twofactor-code`,
         {
           email,
           twoFactorCode,
